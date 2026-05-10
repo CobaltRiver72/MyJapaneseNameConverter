@@ -1,0 +1,51 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import PageBanner from '../components/PageBanner.astro';
+import '../styles/site.css';
+import '../styles/legal.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  ogImage?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  twitterTitle?: string;
+  twitterDescription?: string;
+  bannerKanji1: string;
+  bannerKanji2: string;
+  bannerTitle: string;
+  bannerSubtitle: string;
+  currentPage: 'about' | 'privacy' | 'terms' | 'contact';
+}
+const {
+  title, description, canonical, ogImage, ogTitle, ogDescription, twitterTitle, twitterDescription,
+  bannerKanji1, bannerKanji2, bannerTitle, bannerSubtitle, currentPage,
+} = Astro.props;
+---
+<BaseLayout
+  {title} {description} {canonical}
+  {ogImage} {ogTitle} {ogDescription} {twitterTitle} {twitterDescription}
+>
+  <slot name="schema" slot="schema" />
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <Header currentPage={currentPage} />
+
+  <PageBanner
+    kanji1={bannerKanji1}
+    kanji2={bannerKanji2}
+    title={bannerTitle}
+    subtitle={bannerSubtitle}
+  />
+
+  <main class="page-content" id="main-content" role="main">
+    <slot />
+  </main>
+
+  <Footer />
+</BaseLayout>
