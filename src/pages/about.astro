@@ -1,0 +1,235 @@
+---
+import LegalLayout from '../layouts/LegalLayout.astro';
+---
+<LegalLayout
+  title="About Us | My Japanese Name Translator - Daniel Sato"
+  description="Learn about My Japanese Name Translator, founded by Daniel Sato, a Japanese linguistics expert specializing in accurate English-to-Japanese name conversion using kanji, romaji, and cultural context."
+  canonical="https://myjapanesenametranslator.com/about"
+  ogTitle="About Us | My Japanese Name Translator"
+  ogDescription="Founded by Daniel Sato, a Japanese linguistics expert specializing in accurate English-to-Japanese name conversion using kanji, romaji, and cultural context."
+  twitterTitle="About Us | My Japanese Name Translator"
+  twitterDescription="Founded by Daniel Sato, a Japanese linguistics expert specializing in accurate English-to-Japanese name conversion."
+  bannerKanji1="私"
+  bannerKanji2="達"
+  bannerTitle="About Us"
+  bannerSubtitle="Dedicated to accurate and culturally respectful Japanese name translation"
+  currentPage="about"
+>
+  <Fragment slot="schema" set:html={`
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://myjapanesenametranslator.com/#danielsato",
+          "name": "Daniel Sato",
+          "givenName": "Daniel",
+          "familyName": "Sato",
+          "jobTitle": "Japanese Linguistics Expert & Name Translation Specialist",
+          "description": "Developer and Japanese linguist specializing in English to Japanese name conversion using culturally accurate kanji, katakana, and hiragana transliteration methods.",
+          "knowsLanguage": ["en", "ja"],
+          "knowsAbout": [
+            {
+              "@type": "Thing",
+              "name": "Japanese language",
+              "sameAs": "https://en.wikipedia.org/wiki/Japanese_language"
+            },
+            {
+              "@type": "Thing",
+              "name": "Katakana",
+              "sameAs": "https://en.wikipedia.org/wiki/Katakana"
+            },
+            {
+              "@type": "Thing",
+              "name": "Japanese names",
+              "sameAs": "https://en.wikipedia.org/wiki/Japanese_name"
+            },
+            {
+              "@type": "Thing",
+              "name": "Transliteration",
+              "sameAs": "https://en.wikipedia.org/wiki/Transliteration"
+            }
+          ],
+          "sameAs": [
+            "https://www.linkedin.com/in/daniel-sato-japanese/",
+            "https://github.com/DanielJapanese",
+            "https://www.pinterest.com/Danielsatojapanese/",
+            "https://bsky.app/profile/danielsatojapanese.bsky.social",
+            "https://linktr.ee/danielsatojapanese"
+          ],
+          "worksFor": {
+            "@id": "https://myjapanesenametranslator.com/#organization"
+          }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://myjapanesenametranslator.com/#organization",
+          "name": "My Japanese Name Translator",
+          "alternateName": ["MJNT", "Japanese Name Translator"],
+          "url": "https://myjapanesenametranslator.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://myjapanesenametranslator.com/My-Japanese-Name-Translator-Logo.png",
+            "width": 512,
+            "height": 512
+          },
+          "image": "https://myjapanesenametranslator.com/My-Japanese-Name-Translator-Logo.png",
+          "founder": {
+            "@id": "https://myjapanesenametranslator.com/#danielsato"
+          },
+          "foundingDate": "2026",
+          "areaServed": "Worldwide",
+          "slogan": "Translate Your Name in Japanese",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "contact@myjapanesenametranslator.com",
+            "contactType": "customer support",
+            "availableLanguage": ["English", "Japanese"],
+            "areaServed": "Worldwide"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Stockton",
+            "addressRegion": "CA",
+            "addressCountry": "US"
+          },
+          "sameAs": [
+            "https://github.com/DanielJapanese",
+            "https://www.pinterest.com/Danielsatojapanese/",
+            "https://www.linkedin.com/in/daniel-sato-japanese/",
+            "https://bsky.app/profile/danielsatojapanese.bsky.social",
+            "https://linktr.ee/danielsatojapanese",
+            "https://app.raindrop.io/my/66496713"
+          ],
+          "knowsAbout": [
+            {
+              "@type": "Thing",
+              "name": "Japanese writing system",
+              "sameAs": "https://en.wikipedia.org/wiki/Japanese_writing_system"
+            },
+            {
+              "@type": "Thing",
+              "name": "Name translation",
+              "sameAs": "https://en.wikipedia.org/wiki/Transcription_(linguistics)"
+            }
+          ]
+        },
+        {
+          "@type": "AboutPage",
+          "@id": "https://myjapanesenametranslator.com/about#webpage",
+          "url": "https://myjapanesenametranslator.com/about.html",
+          "name": "About Us | My Japanese Name Translator",
+          "description": "Learn about My Japanese Name Translator, founded by Daniel Sato, a Japanese linguistics expert specializing in accurate English-to-Japanese name conversion.",
+          "isPartOf": {
+            "@id": "https://myjapanesenametranslator.com/#website"
+          },
+          "inLanguage": "en",
+          "author": {
+            "@id": "https://myjapanesenametranslator.com/#danielsato"
+          },
+          "publisher": { "@id": "https://myjapanesenametranslator.com/#organization" },
+          "datePublished": "2026-01-01",
+          "dateModified": "2026-02-06",
+          "breadcrumb": {
+            "@id": "https://myjapanesenametranslator.com/about#breadcrumb"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://myjapanesenametranslator.com/about#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://myjapanesenametranslator.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "About",
+              "item": "https://myjapanesenametranslator.com/about.html"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+`} />
+
+  <article class="content-card">
+
+            <h2>Our Mission</h2>
+            <p>My Japanese Name Translator is dedicated to providing <strong>accurate English-to-Japanese name conversion</strong> using kanji, romaji, and deep cultural context. We believe that a name is more than just a word — it carries identity, heritage, and meaning across languages and cultures.</p>
+            <p>Our mission is to bridge the linguistic gap between English and Japanese naming conventions, ensuring every translation is both <strong>phonetically precise</strong> and <strong>culturally meaningful</strong>.</p>
+
+            <div class="highlight-box">
+                <p>We combine linguistic expertise with cultural sensitivity to deliver Japanese name translations that honor both the original name and Japanese naming traditions.</p>
+            </div>
+
+            <hr class="section-divider">
+
+            <h2>Meet the Founder</h2>
+            <h3>Daniel Sato — Japanese Linguistics Expert & Name Translation Specialist</h3>
+            <p>Daniel Sato is a <strong>Japanese linguistics expert</strong> with deep expertise in Japanese naming conventions, kanji character analysis, and cross-cultural linguistic translation. Based in <strong>Stockton, California</strong>, Daniel founded My Japanese Name Translator to make authentic Japanese name conversion accessible to everyone.</p>
+            <p>With extensive knowledge of Japanese phonology, kanji semantics, and the cultural significance of naming in Japan, Daniel ensures that every translation on our platform meets the highest standards of <strong>linguistic precision</strong> and <strong>cultural respect</strong>.</p>
+
+            <hr class="section-divider">
+
+            <h2>What We Do</h2>
+            <p>Our platform specializes in converting English names into their Japanese equivalents through multiple writing systems:</p>
+
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-icon" aria-hidden="true">漢</div>
+                    <div class="feature-title">Kanji Analysis</div>
+                    <div class="feature-desc">Selecting appropriate kanji characters based on phonetics, meaning, and cultural context</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon" aria-hidden="true">ア</div>
+                    <div class="feature-title">Katakana Conversion</div>
+                    <div class="feature-desc">Standard transliteration for foreign names using Japan's official katakana script</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon" aria-hidden="true">あ</div>
+                    <div class="feature-title">Hiragana Rendering</div>
+                    <div class="feature-desc">Soft, flowing script representations for a more traditional Japanese feel</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon" aria-hidden="true">R</div>
+                    <div class="feature-title">Romaji Output</div>
+                    <div class="feature-desc">Accurate romanized spelling using standardized Hepburn romanization</div>
+                </div>
+            </div>
+
+            <hr class="section-divider">
+
+            <h2>Our Expertise</h2>
+            <p>Our Japanese name translations are grounded in deep understanding of:</p>
+            <ul>
+                <li><strong>Japanese Phonology</strong> — Mapping English sounds to Japanese mora structure with precision</li>
+                <li><strong>Kanji Semantics</strong> — Choosing characters that convey appropriate meaning and cultural resonance</li>
+                <li><strong>Naming Conventions</strong> — Following traditional Japanese rules for name structure, gender associations, and formality</li>
+                <li><strong>Hepburn Romanization</strong> — Using the internationally recognized standard for Japanese-to-English transliteration</li>
+                <li><strong>Cultural Sensitivity</strong> — Ensuring all translations respect Japanese traditions and social norms</li>
+            </ul>
+
+            <hr class="section-divider">
+
+            <h2>Why Accuracy Matters</h2>
+            <p>Japanese names carry deep cultural and linguistic significance. Each kanji character contributes phonetic sound, semantic meaning, and cultural resonance. An inaccurate or inappropriate name translation can cause misunderstanding or unintended offense.</p>
+            <p>That's why we take a meticulous approach to every conversion — analyzing phonetics, selecting culturally appropriate kanji, and providing clear explanations so you understand exactly what your Japanese name means.</p>
+
+            <hr class="section-divider">
+
+            <h2>Contact Us</h2>
+            <p>Have questions about your Japanese name translation? We'd love to hear from you.</p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:contact@myjapanesenametranslator.com">contact@myjapanesenametranslator.com</a></li>
+                <li><strong>Location:</strong> Stockton, California, USA</li>
+                <li><strong>Contact Page:</strong> <a href="/contact.html">Get in touch</a></li>
+            </ul>
+
+        </article>
+</LegalLayout>
