@@ -1,0 +1,21 @@
+---
+interface Props {
+  currentPage?: 'home' | 'about' | 'privacy' | 'terms' | 'contact';
+}
+const { currentPage } = Astro.props;
+---
+<header class="site-header" role="banner">
+    <a href="/" class="logo" aria-label="My Japanese Name Translator - Home">
+        <img src="https://myjapanesenametranslator.com/My-Japanese-Name-Translator-Logo.png" alt="My Japanese Name Translator Logo" class="logo-img" width="132" height="44">
+    </a>
+    <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false" onclick="toggleMobileNav()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <nav class="header-nav" role="navigation" aria-label="Main navigation">
+        <a href="/" {...(currentPage === 'home' ? { 'aria-current': 'page' } : {})}>Home</a>
+        <a href="/about.html" {...(currentPage === 'about' ? { 'aria-current': 'page' } : {})}>About</a>
+        <a href="/privacy.html" {...(currentPage === 'privacy' ? { 'aria-current': 'page' } : {})}>Privacy</a>
+        <a href="/terms.html" {...(currentPage === 'terms' ? { 'aria-current': 'page' } : {})}>Terms</a>
+        <a href="/contact.html" {...(currentPage === 'contact' ? { 'aria-current': 'page' } : {})}>Contact</a>
+    </nav>
+</header>
