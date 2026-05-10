@@ -1,0 +1,16 @@
+{
+  "name": "myjapanesenametranslator-com",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "verify": "node scripts/verify.mjs",
+    "check": "npm run build && npm run verify"
+  },
+  "dependencies": {
+    "astro": "^5.0.0"
+  }
+}
