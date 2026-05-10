@@ -34,8 +34,10 @@ const {
 
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
+  <!-- HEADER -->
   <Header currentPage={currentPage} />
 
+  <!-- PAGE BANNER -->
   <PageBanner
     kanji1={bannerKanji1}
     kanji2={bannerKanji2}
@@ -43,9 +45,11 @@ const {
     subtitle={bannerSubtitle}
   />
 
+  <!-- MAIN CONTENT -->
   <main class="page-content" id="main-content" role="main">
     <slot />
   </main>
 
+  <!-- FOOTER -->
   <Footer />
 </BaseLayout>

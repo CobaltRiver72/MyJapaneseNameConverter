@@ -19,8 +19,14 @@ function normalize(html) {
     .replace(/<script(?![^>]*type="application\/ld\+json")[^>]*>[\s\S]*?<\/script>/g, '')
     // Drop Astro-injected <script src="/_astro/...">
     .replace(/<script[^>]*src="\/_astro\/[^"]+"[^>]*><\/script>/g, '')
+    // Drop HTML comments (structural markers stripped by Astro)
+    .replace(/<!--[\s\S]*?-->/g, '')
+    // Normalize SVG self-closing tags to explicit close form (Astro expands them)
+    .replace(/<(line|circle|path|polyline|polygon|rect|ellipse|use|g)(\s[^>]*)\/>/g, '<$1$2></$1>')
     // Collapse whitespace
     .replace(/\s+/g, ' ')
+    // Normalize </body></html> variants (whitespace stripped by Astro between closing tags)
+    .replace(/<\/body>\s*<\/html>/g, '</body></html>')
     .trim();
 }
 
