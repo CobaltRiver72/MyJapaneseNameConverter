@@ -1,0 +1,17 @@
+---
+interface Props {
+  kanji1: string;
+  kanji2: string;
+  title: string;
+  subtitle: string;
+}
+const { kanji1, kanji2, title, subtitle } = Astro.props;
+---
+<section class="page-banner">
+    <div class="banner-kanji k1" aria-hidden="true">{kanji1}</div>
+    <div class="banner-kanji k2" aria-hidden="true">{kanji2}</div>
+    <div class="banner-content">
+        <h1 class="animate-in delay-1">{title}</h1>
+        <p class="animate-in delay-2">{subtitle}</p>
+    </div>
+</section>
