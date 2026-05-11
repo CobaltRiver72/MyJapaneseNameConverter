@@ -29,6 +29,11 @@ function normalize(html) {
     .replace(/<\/body>\s*<\/html>/g, '</body></html>')
     // Normalize HTML-encoded apostrophe &#39; to literal ' (Astro escapes JSX text)
     .replace(/&#39;/g, "'")
+    // Normalize HTML-encoded ampersand &amp; and &#38; to literal & (Astro escapes & in JSX expressions)
+    .replace(/&amp;/g, '&')
+    .replace(/&#38;/g, '&')
+    // Normalize HTML entity &copy; to literal © (Footer.astro uses entity; source may use literal)
+    .replace(/&copy;/g, '©')
     .trim();
 }
 
