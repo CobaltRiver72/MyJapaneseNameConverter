@@ -1,17 +1,25 @@
 ---
+interface Props {
+  nameTranslatorHref: string;
+}
+
+const { nameTranslatorHref } = Astro.props;
 ---
-<footer class="site-footer" role="contentinfo">
-    <div class="footer-brand">My Japanese Name Translator</div>
-    <div class="footer-tagline">Translate Your Name in Japanese</div>
-    <nav class="footer-links" aria-label="Footer navigation">
-        <a href="/">Home</a>
-        <a href="/about.html">About</a>
-        <a href="/privacy.html">Privacy Policy</a>
-        <a href="/terms.html">Terms of Service</a>
-        <a href="/contact.html">Contact</a>
-    </nav>
-    <div class="footer-contact">
-        <a href="mailto:contact@myjapanesenametranslator.com">contact@myjapanesenametranslator.com</a>
-    </div>
-    <div class="footer-copy">&copy; 2026 My Japanese Name Translator. All rights reserved.</div>
-</footer>
+    <!-- FOOTER -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-brand">My Japanese Name Translator</div>
+        <div class="footer-tagline">Translate Your Name in Japanese</div>
+        <nav class="footer-links" aria-label="Footer navigation">
+            <a href="/">Home</a>
+            <a href={nameTranslatorHref}>Name Translator</a>
+            <a href="/kanji-to-hiragana-converter.html">Kanji Converter</a>
+            <a href="/about.html">About</a>
+            <a href="/privacy.html">Privacy Policy</a>
+            <a href="/terms.html">Terms of Service</a>
+            <a href="/contact.html">Contact</a>
+        </nav>
+        <div class="footer-contact">
+            <a href="mailto:contact@myjapanesenametranslator.com">contact@myjapanesenametranslator.com</a>
+        </div>
+        <div class="footer-copy">&copy; 2026 My Japanese Name Translator. All rights reserved.</div>
+    </footer>
