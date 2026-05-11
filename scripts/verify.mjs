@@ -27,6 +27,8 @@ function normalize(html) {
     .replace(/\s+/g, ' ')
     // Normalize </body></html> variants (whitespace stripped by Astro between closing tags)
     .replace(/<\/body>\s*<\/html>/g, '</body></html>')
+    // Normalize HTML-encoded apostrophe &#39; to literal ' (Astro escapes JSX text)
+    .replace(/&#39;/g, "'")
     .trim();
 }
 
