@@ -2,30 +2,38 @@
 import BaseLayout from './BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import '../styles/site.css';
-import '../styles/home.css';
 
 interface Props {
   title: string;
   description: string;
   canonical: string;
-  ogImage?: string;
+  csp: string;
   ogTitle?: string;
   ogDescription?: string;
+  ogUrl?: string;
+  ogImage?: string;
   twitterTitle?: string;
   twitterDescription?: string;
 }
+
 const props = Astro.props;
 ---
 <BaseLayout {...props}>
-  <slot name="schema" slot="schema" />
+    <Fragment slot="head-extra"><link rel="stylesheet" href="/styles.css"></Fragment>
+    <slot name="schema" slot="schema" />
 
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-  <Header currentPage="home" />
+    <!-- SKIP LINK -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <slot />
+    <Header currentPage="home" nameTranslatorHref="#converter" />
 
-  <Footer />
+    <slot />
 
-  <div class="copied-toast" id="copiedToast" role="status" aria-live="polite">✓ Copied to clipboard</div>
+    <Footer nameTranslatorHref="#converter" />
+
+    <!-- COPIED TOAST -->
+    <div class="copied-toast" id="copiedToast" role="status" aria-live="polite">✓ Copied to clipboard</div>
+    <div class="copied-toast" id="ttsToast" role="status" aria-live="polite">Text-to-speech not supported in this browser</div>
+
+    <Fragment set:html={'<script src="/script.js"></script>'} />
 </BaseLayout>
