@@ -4,14 +4,17 @@ import LegalLayout from '../layouts/LegalLayout.astro';
 <LegalLayout
   title="Privacy Policy | My Japanese Name Translator"
   description="Privacy Policy for My Japanese Name Translator. Learn how we handle your data, our cookie policy, GDPR compliance, and your rights as a user."
-  canonical="https://myjapanesenametranslator.com/privacy"
+  canonical="https://myjapanesenametranslator.com/privacy.html"
+  csp="upgrade-insecure-requests; default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://myjapanesenametranslator.com data:; connect-src 'self' https://www.google-analytics.com;"
+  ogTitle="Privacy Policy | My Japanese Name Translator"
   ogDescription="Privacy Policy for My Japanese Name Translator. Learn how we handle your data, our cookie policy, and GDPR compliance."
+  twitterTitle="Privacy Policy | My Japanese Name Translator"
   twitterDescription="Privacy Policy for My Japanese Name Translator. Learn how we handle your data and your privacy rights."
   bannerKanji1="秘"
   bannerKanji2="密"
   bannerTitle="Privacy Policy"
   bannerSubtitle="How we collect, use, and protect your information"
-  currentPage="privacy"
+  currentPage="none"
 >
   <Fragment slot="schema" set:html={`
     <script type="application/ld+json">
@@ -53,8 +56,7 @@ import LegalLayout from '../layouts/LegalLayout.astro';
             "https://www.linkedin.com/in/daniel-sato-japanese/",
             "https://github.com/DanielJapanese",
             "https://www.pinterest.com/Danielsatojapanese/",
-            "https://bsky.app/profile/danielsatojapanese.bsky.social",
-            "https://linktr.ee/danielsatojapanese"
+            "https://bsky.app/profile/danielsatojapanese.bsky.social"
           ],
           "worksFor": {
             "@id": "https://myjapanesenametranslator.com/#organization"
@@ -96,9 +98,7 @@ import LegalLayout from '../layouts/LegalLayout.astro';
             "https://github.com/DanielJapanese",
             "https://www.pinterest.com/Danielsatojapanese/",
             "https://www.linkedin.com/in/daniel-sato-japanese/",
-            "https://bsky.app/profile/danielsatojapanese.bsky.social",
-            "https://linktr.ee/danielsatojapanese",
-            "https://app.raindrop.io/my/66496713"
+            "https://bsky.app/profile/danielsatojapanese.bsky.social"
           ],
           "knowsAbout": [
             {
@@ -114,8 +114,23 @@ import LegalLayout from '../layouts/LegalLayout.astro';
           ]
         },
         {
+          "@type": "WebSite",
+          "@id": "https://myjapanesenametranslator.com/#website",
+          "url": "https://myjapanesenametranslator.com/",
+          "name": "My Japanese Name Translator",
+          "alternateName": "Japanese Name Converter",
+          "description": "Free Japanese name converter tool. Instantly convert your English name to authentic Katakana (カタカナ), Hiragana (ひらがな), and Kanji (漢字) with pronunciation guides and cultural meanings.",
+          "inLanguage": "en",
+          "publisher": {
+            "@id": "https://myjapanesenametranslator.com/#organization"
+          },
+          "creator": {
+            "@id": "https://myjapanesenametranslator.com/#danielsato"
+          }
+        },
+        {
           "@type": "WebPage",
-          "@id": "https://myjapanesenametranslator.com/privacy#webpage",
+          "@id": "https://myjapanesenametranslator.com/privacy.html#webpage",
           "url": "https://myjapanesenametranslator.com/privacy.html",
           "name": "Privacy Policy | My Japanese Name Translator",
           "description": "Privacy Policy for My Japanese Name Translator. Learn how we handle your data, our cookie policy, GDPR compliance, and your rights.",
@@ -130,12 +145,12 @@ import LegalLayout from '../layouts/LegalLayout.astro';
           "datePublished": "2026-01-01",
           "dateModified": "2026-02-06",
           "breadcrumb": {
-            "@id": "https://myjapanesenametranslator.com/privacy#breadcrumb"
+            "@id": "https://myjapanesenametranslator.com/privacy.html#breadcrumb"
           }
         },
         {
           "@type": "BreadcrumbList",
-          "@id": "https://myjapanesenametranslator.com/privacy#breadcrumb",
+          "@id": "https://myjapanesenametranslator.com/privacy.html#breadcrumb",
           "itemListElement": [
             {
               "@type": "ListItem",
