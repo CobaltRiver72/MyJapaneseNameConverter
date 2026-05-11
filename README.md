@@ -6,6 +6,67 @@
 
 ---
 
+## 🛠️ Local Development & Deployment
+
+This site is built with [Astro](https://astro.build/) as a fully static site. All pages are pre-rendered to HTML at build time and served as static files.
+
+### Prerequisites
+- Node.js 18 or newer
+- npm
+
+### Develop locally
+
+```bash
+npm install
+npm run dev          # http://localhost:4321
+```
+
+The dev server hot-reloads CSS/JS/HTML changes instantly. All 5 pages are served at their `.html` URLs (e.g., `http://localhost:4321/about.html`).
+
+### Build & verify before deploy
+
+```bash
+npm run build        # outputs dist/
+npm run verify       # HTML-diff against current/ snapshots (Layer 1 SEO gate)
+npm run preview      # serves dist/ at http://localhost:4321 (final check)
+```
+
+**`npm run verify`** is the critical SEO safety gate. It compares each built page against the pre-migration snapshot in `current/` (gitignored) and confirms zero unexpected differences in `<title>`, meta, OG, Twitter, canonical, JSON-LD schema, headings, body content, links, alt text, or ARIA attributes. The migration was designed to be byte-identical to the original HTML output (modulo CSS/JS externalization and Astro's HTML entity normalization).
+
+### Manual smoke test (before deploy)
+
+Run `npm run preview` and open each page in a browser. Check:
+- Header logo and nav render correctly, with `aria-current="page"` on the active link
+- Mobile menu opens/closes (resize window below 640px)
+- Footer renders with brand, links, contact email, copyright
+- **Homepage `/`:** converter accepts input ("John" → ジョン/じょん/Jon), copy buttons work, popular-name chips populate and trigger conversion, FAQ accordions expand
+- **`/contact.html`:** form validation shows error messages; valid submit opens mailto
+- **All pages:** no console errors in DevTools
+
+### Deploy to Hostinger
+
+1. **Backup current `public_html/`** via Hostinger File Manager (download as a zip). This is your one-click rollback path.
+2. Run locally: `npm run build && npm run verify && npm run preview` — all must pass.
+3. Upload the contents of `dist/` to `public_html/` via File Manager drag-and-drop or FTP.
+4. Spot-check the live site in an incognito window. View source on each page to confirm `<title>`, canonical, OG tags, and JSON-LD schema are intact.
+
+### Project structure
+
+```
+src/
+├── pages/             # One .astro file per URL
+├── layouts/           # BaseLayout, HomeLayout, LegalLayout
+├── components/        # Header, Footer, PageBanner
+├── styles/            # site.css (everywhere), home.css (index), legal.css (legal pages)
+└── scripts/           # site.js (mobile nav), home.js (converter), contact.js (form)
+public/                # Static assets served as-is (favicon, logo, robots.txt, sitemap.xml)
+current/               # Pre-migration HTML snapshots (gitignored, used by verify.mjs)
+scripts/verify.mjs     # Layer 1 SEO verification script
+dist/                  # Build output (gitignored). Upload to Hostinger public_html/.
+```
+
+---
+
 ## 🎌 What We Do
 
 My Japanese Name Translator is a free online tool for instantly converting English names into Japanese using four writing systems — **Katakana (カタカナ)**, **Hiragana (ひらがな)**, **Kanji (漢字)**, and **Romaji**. We use phonetic transliteration based on standard Hepburn romanization rules to produce natural-sounding, culturally appropriate Japanese name equivalents.
