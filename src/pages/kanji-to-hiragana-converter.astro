@@ -1,0 +1,606 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/kanji.css';
+---
+<BaseLayout
+  title="Kanji to Hiragana Converter | Free Japanese Reading Tool"
+  description="Free kanji to hiragana converter. Convert Japanese kanji to hiragana readings with furigana, romaji, and pronunciation guides."
+  canonical="https://myjapanesenametranslator.com/kanji-to-hiragana-converter.html"
+  csp="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: https://www.googletagmanager.com https://www.google-analytics.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://myjapanesenametranslator.com data:; connect-src 'self' https://www.google-analytics.com https://cdn.jsdelivr.net; worker-src 'self' blob:; child-src 'self' blob:;"
+  ogTitle="Kanji to Hiragana Converter | Free Japanese Reading Tool"
+  ogDescription="Convert Japanese kanji to hiragana instantly. Free tool with furigana, romaji, and pronunciation features for Japanese learners."
+  ogUrl="https://myjapanesenametranslator.com/kanji-to-hiragana-converter.html"
+  twitterTitle="Kanji to Hiragana Converter | Free Japanese Reading Tool"
+  twitterDescription="Convert Japanese kanji to hiragana instantly. Free tool with furigana, romaji, and pronunciation features for Japanese learners."
+>
+  <Fragment slot="schema" set:html={`<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://myjapanesenametranslator.com/#danielsato",
+          "name": "Daniel Sato",
+          "givenName": "Daniel",
+          "familyName": "Sato",
+          "jobTitle": "Japanese Linguistics Expert & Name Translation Specialist",
+          "description": "Developer and Japanese linguist specializing in English to Japanese name conversion using culturally accurate kanji, katakana, and hiragana transliteration methods.",
+          "knowsLanguage": ["en", "ja"],
+          "knowsAbout": [
+            {
+              "@type": "Thing",
+              "name": "Japanese language",
+              "sameAs": "https://en.wikipedia.org/wiki/Japanese_language"
+            },
+            {
+              "@type": "Thing",
+              "name": "Katakana",
+              "sameAs": "https://en.wikipedia.org/wiki/Katakana"
+            },
+            {
+              "@type": "Thing",
+              "name": "Japanese names",
+              "sameAs": "https://en.wikipedia.org/wiki/Japanese_name"
+            },
+            {
+              "@type": "Thing",
+              "name": "Transliteration",
+              "sameAs": "https://en.wikipedia.org/wiki/Transliteration"
+            }
+          ],
+          "sameAs": [
+            "https://www.linkedin.com/in/daniel-sato-japanese/",
+            "https://github.com/DanielJapanese",
+            "https://www.pinterest.com/Danielsatojapanese/",
+            "https://bsky.app/profile/danielsatojapanese.bsky.social"
+          ],
+          "worksFor": {
+            "@id": "https://myjapanesenametranslator.com/#organization"
+          }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://myjapanesenametranslator.com/#organization",
+          "name": "My Japanese Name Translator",
+          "alternateName": ["MJNT", "Japanese Name Translator"],
+          "url": "https://myjapanesenametranslator.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://myjapanesenametranslator.com/My-Japanese-Name-Translator-Logo.png",
+            "width": 512,
+            "height": 512
+          },
+          "image": "https://myjapanesenametranslator.com/My-Japanese-Name-Translator-Logo.png",
+          "founder": {
+            "@id": "https://myjapanesenametranslator.com/#danielsato"
+          },
+          "foundingDate": "2026",
+          "areaServed": "Worldwide",
+          "slogan": "Translate Your Name in Japanese",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "contact@myjapanesenametranslator.com",
+            "contactType": "customer support",
+            "availableLanguage": ["English", "Japanese"],
+            "areaServed": "Worldwide"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Stockton",
+            "addressRegion": "CA",
+            "addressCountry": "US"
+          },
+          "sameAs": [
+            "https://github.com/DanielJapanese",
+            "https://www.pinterest.com/Danielsatojapanese/",
+            "https://www.linkedin.com/in/daniel-sato-japanese/",
+            "https://bsky.app/profile/danielsatojapanese.bsky.social"
+          ],
+          "knowsAbout": [
+            {
+              "@type": "Thing",
+              "name": "Japanese writing system",
+              "sameAs": "https://en.wikipedia.org/wiki/Japanese_writing_system"
+            },
+            {
+              "@type": "Thing",
+              "name": "Name translation",
+              "sameAs": "https://en.wikipedia.org/wiki/Transcription_(linguistics)"
+            }
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://myjapanesenametranslator.com/#website",
+          "url": "https://myjapanesenametranslator.com/",
+          "name": "My Japanese Name Translator",
+          "alternateName": "Japanese Name Converter",
+          "description": "Free Japanese name converter tool. Instantly convert your English name to authentic Katakana (カタカナ), Hiragana (ひらがな), and Kanji (漢字) with pronunciation guides and cultural meanings.",
+          "inLanguage": "en",
+          "publisher": {
+            "@id": "https://myjapanesenametranslator.com/#organization"
+          },
+          "creator": {
+            "@id": "https://myjapanesenametranslator.com/#danielsato"
+          }
+        },
+        {
+          "@type": "WebApplication",
+          "@id": "https://myjapanesenametranslator.com/kanji-to-hiragana-converter.html#application",
+          "name": "Kanji to Hiragana Converter",
+          "description": "Free online tool to convert Japanese kanji text into hiragana readings. Supports furigana, romaji, and mixed output modes for Japanese language learners.",
+          "url": "https://myjapanesenametranslator.com/kanji-to-hiragana-converter.html",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "Web Browser",
+          "browserRequirements": "Requires JavaScript",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "featureList": [
+            "Kanji to hiragana conversion",
+            "Furigana generation",
+            "Romaji transliteration",
+            "One-click copy",
+            "JLPT level display",
+            "Mobile-friendly interface"
+          ],
+          "author": {
+            "@id": "https://myjapanesenametranslator.com/#danielsato"
+          },
+          "provider": {
+            "@id": "https://myjapanesenametranslator.com/#organization"
+          },
+          "isPartOf": {
+            "@id": "https://myjapanesenametranslator.com/#website"
+          },
+          "about": [
+            {
+              "@type": "Thing",
+              "name": "Kanji",
+              "sameAs": "https://en.wikipedia.org/wiki/Kanji"
+            },
+            {
+              "@type": "Thing",
+              "name": "Hiragana",
+              "sameAs": "https://en.wikipedia.org/wiki/Hiragana"
+            },
+            {
+              "@type": "Thing",
+              "name": "Furigana",
+              "sameAs": "https://en.wikipedia.org/wiki/Furigana"
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+            "@id": "https://myjapanesenametranslator.com/kanji-to-hiragana-converter.html#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://myjapanesenametranslator.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Kanji to Hiragana Converter",
+              "item": "https://myjapanesenametranslator.com/kanji-to-hiragana-converter.html"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://myjapanesenametranslator.com/kanji-to-hiragana-converter.html#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How do I convert kanji to hiragana?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Simply paste your Japanese text containing kanji into the input box and click Convert. The tool will instantly display the hiragana reading for each kanji character."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the difference between hiragana and furigana?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Hiragana is one of the Japanese writing scripts used for native words. Furigana are small hiragana characters placed above or beside kanji to indicate pronunciation. Our tool supports both inline hiragana conversion and furigana display modes."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can this tool handle sentences with mixed kanji and hiragana?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes! The converter accurately processes mixed Japanese text. It identifies kanji characters and converts them while preserving existing hiragana, katakana, and punctuation."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does the converter show multiple kanji readings?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The tool uses context-aware analysis to determine the correct reading for each kanji based on the surrounding text. For individual kanji lookup, click on any character to see all possible Onyomi and Kunyomi readings."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is this tool free to use?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, our kanji to hiragana converter is completely free with no registration required. Use it as many times as you need for your Japanese studies."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why do some kanji have multiple readings?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Kanji were borrowed from Chinese over centuries, often multiple times. Onyomi (音読み) reflects the original Chinese pronunciation, while Kunyomi (訓読み) is the native Japanese reading. Some kanji acquired additional readings through different Chinese dialects or special Japanese usage."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I use this for JLPT study?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely! This tool is perfect for JLPT preparation. Paste practice text and see hiragana readings for unfamiliar kanji. The converter helps you learn readings in context, which is more effective than memorizing isolated characters."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "HowTo",
+          "@id": "https://myjapanesenametranslator.com/kanji-to-hiragana-converter.html#howto",
+          "name": "How to Convert Kanji to Hiragana",
+          "description": "Step-by-step guide to converting Japanese kanji characters into hiragana readings using our free online tool.",
+          "step": [
+            {
+              "@type": "HowToStep",
+              "position": 1,
+              "name": "Enter Japanese text",
+              "text": "Paste or type your Japanese text containing kanji characters into the input field."
+            },
+            {
+              "@type": "HowToStep",
+              "position": 2,
+              "name": "Select output mode",
+              "text": "Choose your preferred output format: Hiragana, Furigana, Romaji, or Mixed mode."
+            },
+            {
+              "@type": "HowToStep",
+              "position": 3,
+              "name": "Click Convert",
+              "text": "Press the Convert button to process your text instantly."
+            },
+            {
+              "@type": "HowToStep",
+              "position": 4,
+              "name": "Copy or study the result",
+              "text": "Use the Copy button to save your converted text, or click individual words for detailed readings and meanings."
+            }
+          ]
+        }
+      ]
+    }
+    </script>`} />
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <Header currentPage="kanji" nameTranslatorHref="/" />
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-kanji k1" aria-hidden="true">読</div>
+        <div class="hero-kanji k2" aria-hidden="true">変</div>
+        <div class="hero-kanji k3" aria-hidden="true">換</div>
+        <div class="hero-kanji k4" aria-hidden="true">仮</div>
+        <div class="hero-content">
+            <div class="hero-badge animate-in delay-1">Free Japanese Reading Tool</div>
+            <h1 class="animate-in delay-2">Kanji to Hiragana Converter</h1>
+            <p class="animate-in delay-3">Convert any Japanese text from kanji to readable hiragana instantly. Perfect for learners who can read hiragana but encounter unfamiliar kanji in manga, news, or study materials. Our free tool shows accurate readings with furigana, romaji, and pronunciation options.</p>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main id="main-content" role="main">
+
+    <!-- BREADCRUMB -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a><span>›</span><strong>Kanji to Hiragana Converter</strong>
+    </nav>
+
+    <!-- CONVERTER -->
+    <section class="converter-section animate-in delay-4" id="converter">
+        <div class="converter-card">
+            <div class="converter-inner">
+                <label for="kanjiInput" class="converter-label">Enter Japanese Text</label>
+                <div class="input-area">
+                    <textarea class="kanji-input" id="kanjiInput" placeholder="日本語を入力してください (Paste Japanese text here...)" autocomplete="off" rows="4"></textarea>
+                </div>
+                <div class="input-meta">
+                    <div class="char-count"><span id="charCount">0</span> characters</div>
+                    <div class="engine-status">
+                        <div class="status-dot loading" id="statusDot"></div>
+                        <span id="statusText" style="font-size:0.78rem; color:var(--slate);">Loading engine...</span>
+                    </div>
+                </div>
+
+                <div class="mode-toggles" style="margin-bottom: 1.25rem;">
+                    <button class="mode-toggle active" data-mode="main" aria-pressed="true">Main</button>
+                    <button class="mode-toggle" data-mode="romaji" aria-pressed="false">Romaji</button>
+                    <button class="mode-toggle" data-mode="kana" aria-pressed="false">Kana <span class="jp">かな</span></button>
+                    <button class="mode-toggle" data-mode="original" aria-pressed="false">Original</button>
+                    <button class="mode-toggle" data-mode="table" aria-pressed="false">Table <span class="jp">表</span></button>
+                </div>
+
+                <div class="action-row">
+                    <button class="convert-btn" id="convertBtn" onclick="convertText()" disabled>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>
+                        Convert
+                    </button>
+                    <button class="clear-btn" onclick="clearAll()">Clear</button>
+                    <button class="speak-btn" id="speakBtn" onclick="speakText()">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+                        Listen
+                    </button>
+                </div>
+
+                <!-- RESULTS -->
+                <div class="results-area" id="resultsArea" aria-live="polite">
+                    <div class="result-header">
+                        <div class="result-mode-label" id="resultModeLabel">Main View</div>
+                        <button class="copy-all-btn" onclick="copyResult()">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                            Copy
+                        </button>
+                    </div>
+                    <div class="output-controls" id="outputControls" hidden>
+                        <div class="output-toggles" role="group" aria-label="Column visibility">
+                            <button type="button" class="toggle-btn active" data-col="reading" aria-pressed="true">Reading</button>
+                            <button type="button" class="toggle-btn active" data-col="gloss" aria-pressed="true">Gloss</button>
+                        </div>
+                        <div class="pos-filters" role="group" aria-label="Part-of-speech filters">
+                            <button type="button" class="pos-chip active pos-n"   data-pos="n"   aria-pressed="true">N</button>
+                            <button type="button" class="pos-chip active pos-v"   data-pos="v"   aria-pressed="true">V</button>
+                            <button type="button" class="pos-chip active pos-adj" data-pos="adj" aria-pressed="true">Adj</button>
+                            <button type="button" class="pos-chip active pos-na"  data-pos="na"  aria-pressed="true">Na</button>
+                            <button type="button" class="pos-chip active pos-prt" data-pos="prt" aria-pressed="true">Prt</button>
+                            <button type="button" class="pos-chip active pos-on"  data-pos="on"  aria-pressed="true">On</button>
+                        </div>
+                    </div>
+                    <div class="result-display" style="position:relative;">
+                        <div class="result-text" id="resultText"></div>
+                        <div class="loading-overlay" id="resultLoading">
+                            <div class="loading-spinner"></div>
+                            <div class="loading-text">Converting...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-section" id="how-it-works">
+        <div class="how-card">
+            <h2>How Japanese Kanji Reading Works</h2>
+            <p>Kanji (漢字) are logographic characters originally borrowed from Chinese and adapted into the Japanese writing system over centuries. Modern Japanese uses approximately 2,136 jōyō kanji (常用漢字) — the "regular-use" characters designated by Japan's Ministry of Education. Each kanji can have <strong>multiple readings</strong>, which makes learning to read Japanese one of the most challenging aspects of the language.</p>
+
+            <p>Every kanji has at least two types of readings: <strong>Onyomi</strong> (音読み), the Sino-Japanese reading derived from the original Chinese pronunciation, and <strong>Kunyomi</strong> (訓読み), the native Japanese reading. The correct reading depends entirely on context — the words surrounding the kanji determine which pronunciation to use.</p>
+
+            <div class="reading-example">
+                <div class="kanji-big" aria-hidden="true">日</div>
+                <div class="readings">
+                    <strong>Onyomi:</strong> <span>ニチ (nichi)</span>, <span>ジツ (jitsu)</span><br>
+                    <strong>Kunyomi:</strong> <span>ひ (hi)</span>, <span>か (ka)</span><br>
+                    <strong>Examples:</strong> 日本 = <span>にほん</span> (nihon, Japan) · 日曜日 = <span>にちようび</span> (nichiyōbi, Sunday) · 今日 = <span>きょう</span> (kyō, today)
+                </div>
+            </div>
+
+            <p>Our converter uses <strong>morphological analysis</strong> — the same technology used in Japanese word processors and search engines — to intelligently segment text and determine the correct context-dependent reading for each kanji. This means you get accurate hiragana readings even for kanji with many possible pronunciations.</p>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features-section">
+        <h2>Converter Features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Instant Conversion</h3>
+                <p>Process kanji to hiragana in milliseconds using client-side morphological analysis. No server roundtrips needed.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <span style="font-family:'Noto Sans JP',sans-serif; font-size:0.9rem;">振</span>
+                </div>
+                <h3>Furigana Mode</h3>
+                <p>Display hiragana readings above kanji characters using ruby text format — just like in manga and textbooks.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">Aa</div>
+                <h3>Romaji Output</h3>
+                <p>Get romanized pronunciation for beginners who haven't yet mastered hiragana. Uses standard Hepburn romanization.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🧠</div>
+                <h3>Context-Aware</h3>
+                <p>Accurate readings based on surrounding word context. Handles multiple readings per kanji correctly.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📋</div>
+                <h3>One-Click Copy</h3>
+                <p>Copy converted text to clipboard instantly for use in flashcards, notes, or study materials.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔊</div>
+                <h3>Audio Pronunciation</h3>
+                <p>Listen to the Japanese text read aloud using your browser's built-in speech synthesis engine.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Mobile Friendly</h3>
+                <p>Works perfectly on any device — phone, tablet, or desktop. No app installation needed.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🆓</div>
+                <h3>100% Free</h3>
+                <p>No registration, no limits, no ads. Use it as many times as you need for your Japanese studies.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXAMPLE CONVERSIONS -->
+    <section class="examples-section" id="examples">
+        <h2>Example Kanji to Hiragana Conversions</h2>
+        <div class="examples-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Original (Kanji)</th>
+                        <th>Hiragana</th>
+                        <th>Romaji</th>
+                        <th>Meaning</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="kanji-col">日本語</td>
+                        <td class="hira-col">にほんご</td>
+                        <td class="roma-col">nihongo</td>
+                        <td>Japanese language</td>
+                        <td><button class="example-try-btn" onclick="tryExample('日本語')">Try it</button></td>
+                    </tr>
+                    <tr>
+                        <td class="kanji-col">勉強する</td>
+                        <td class="hira-col">べんきょうする</td>
+                        <td class="roma-col">benkyō suru</td>
+                        <td>to study</td>
+                        <td><button class="example-try-btn" onclick="tryExample('勉強する')">Try it</button></td>
+                    </tr>
+                    <tr>
+                        <td class="kanji-col">食べ物</td>
+                        <td class="hira-col">たべもの</td>
+                        <td class="roma-col">tabemono</td>
+                        <td>food</td>
+                        <td><button class="example-try-btn" onclick="tryExample('食べ物')">Try it</button></td>
+                    </tr>
+                    <tr>
+                        <td class="kanji-col">電車</td>
+                        <td class="hira-col">でんしゃ</td>
+                        <td class="roma-col">densha</td>
+                        <td>train</td>
+                        <td><button class="example-try-btn" onclick="tryExample('電車')">Try it</button></td>
+                    </tr>
+                    <tr>
+                        <td class="kanji-col">図書館</td>
+                        <td class="hira-col">としょかん</td>
+                        <td class="roma-col">toshokan</td>
+                        <td>library</td>
+                        <td><button class="example-try-btn" onclick="tryExample('図書館')">Try it</button></td>
+                    </tr>
+                    <tr>
+                        <td class="kanji-col">天気予報</td>
+                        <td class="hira-col">てんきよほう</td>
+                        <td class="roma-col">tenki yohō</td>
+                        <td>weather forecast</td>
+                        <td><button class="example-try-btn" onclick="tryExample('天気予報')">Try it</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section" id="faq">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item open">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="true" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">How do I convert kanji to hiragana?</div>
+            <div class="faq-a">Simply paste your Japanese text containing kanji into the input box and click Convert. The tool will instantly display the hiragana reading for each kanji character. You can also choose different output modes like Furigana (readings above kanji), Romaji (romanized text), or Mixed (original with readings in parentheses).</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">What is the difference between hiragana and furigana?</div>
+            <div class="faq-a" aria-hidden="true">Hiragana is one of the Japanese writing scripts used for native words, grammar particles, and more. Furigana are small hiragana characters placed above or beside kanji to indicate pronunciation — you'll commonly see them in manga, children's books, and Japanese learning materials. Our tool supports both inline hiragana conversion and furigana display modes.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">Can this tool handle sentences with mixed kanji and hiragana?</div>
+            <div class="faq-a" aria-hidden="true">Yes! The converter accurately processes mixed Japanese text. It uses morphological analysis to identify kanji characters and compound words, converting them while preserving existing hiragana, katakana, punctuation, and numbers exactly as they are.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">Does the converter show multiple kanji readings?</div>
+            <div class="faq-a" aria-hidden="true">The tool uses context-aware morphological analysis to determine the correct reading for each kanji based on the surrounding text. This means it automatically selects the right reading — for example, it knows that 日 is read as にち in 日曜日 but ひ in 日の出. This is the same technology used in Japanese word processors.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">Is this tool free to use?</div>
+            <div class="faq-a" aria-hidden="true">Yes, our kanji to hiragana converter is completely free with no registration required. All processing happens directly in your browser — your text is never sent to any server. Use it as many times as you need for your Japanese studies.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">Why do some kanji have multiple readings?</div>
+            <div class="faq-a" aria-hidden="true">Kanji were borrowed from Chinese over centuries, often multiple times from different Chinese dialects. Onyomi (音読み) reflects the original Chinese pronunciation, while Kunyomi (訓読み) is the native Japanese reading assigned to the character. Some kanji also have special readings called nanori (used in names) or jukujikun (compound-specific readings like 今日 = きょう).</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">Can I use this for JLPT study?</div>
+            <div class="faq-a" aria-hidden="true">Absolutely! This tool is perfect for JLPT preparation at all levels (N5 through N1). Paste practice reading passages, news articles, or any Japanese text, and instantly see hiragana readings for unfamiliar kanji. The converter helps you learn readings in context, which is far more effective than memorizing isolated character lists.</div>
+        </div>
+    </section>
+
+    <!-- RELATED TOOLS -->
+    <section class="related-section">
+        <h2>More Japanese Language Tools</h2>
+        <div class="related-grid">
+            <a href="/" class="related-card">
+                <div class="related-icon" aria-hidden="true">名</div>
+                <h3>Japanese Name Translator</h3>
+                <p>Convert your English name to Japanese Katakana, Hiragana, and Kanji with pronunciation guides and cultural context.</p>
+            </a>
+            <a href="/about.html" class="related-card">
+                <div class="related-icon" aria-hidden="true">人</div>
+                <h3>About Daniel Sato</h3>
+                <p>Learn about the Japanese linguistics expert behind My Japanese Name Translator and our commitment to accuracy.</p>
+            </a>
+            <a href="/contact.html" class="related-card">
+                <div class="related-icon" aria-hidden="true">問</div>
+                <h3>Contact Us</h3>
+                <p>Have questions about Japanese translations or suggestions for new tools? We'd love to hear from you.</p>
+            </a>
+        </div>
+    </section>
+
+    </main>
+
+    <Footer nameTranslatorHref="/" />
+
+    <!-- COPIED TOAST -->
+    <div class="copied-toast" id="copiedToast" role="status" aria-live="polite">&#10003; Copied to clipboard</div>
+
+    <!-- Patch: kuromoji's bundled path.join strips the protocol double-slash
+         from URLs (https:// becomes https:/). This permanent XHR patch fixes
+         mangled URLs before they are sent. Must run BEFORE library scripts load. -->
+    <Fragment set:html={`<script>
+    (function() {
+        var origOpen = XMLHttpRequest.prototype.open;
+        XMLHttpRequest.prototype.open = function() {
+            var args = Array.prototype.slice.call(arguments);
+            if (typeof args[1] === 'string') {
+                args[1] = args[1].replace(/^https:\\/(?!\\/)/, 'https://');
+                args[1] = args[1].replace(/^http:\\/(?!\\/)/, 'http://');
+            }
+            return origOpen.apply(this, args);
+        };
+    })();
+    <\/script>`} />
+
+    <!-- Kuroshiro Libraries -->
+    <Fragment set:html={`<script src="https://cdn.jsdelivr.net/npm/kuroshiro@1.2.0/dist/kuroshiro.min.js"><\/script>`} />
+    <Fragment set:html={`<script src="https://cdn.jsdelivr.net/npm/kuroshiro-analyzer-kuromoji@1.1.0/dist/kuroshiro-analyzer-kuromoji.min.js"><\/script>`} />
+
+    <script is:inline src="/scripts/kanji.js"></script>
+</BaseLayout>
