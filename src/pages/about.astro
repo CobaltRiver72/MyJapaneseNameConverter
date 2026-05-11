@@ -3,8 +3,9 @@ import LegalLayout from '../layouts/LegalLayout.astro';
 ---
 <LegalLayout
   title="About Us | My Japanese Name Translator - Daniel Sato"
-  description="Learn about My Japanese Name Translator, founded by Daniel Sato, a Japanese linguistics expert specializing in accurate English-to-Japanese name conversion using kanji, romaji, and cultural context."
-  canonical="https://myjapanesenametranslator.com/about"
+  description="Learn about My Japanese Name Translator by Daniel Sato. Expert English-to-Japanese name conversion using kanji and cultural context."
+  canonical="https://myjapanesenametranslator.com/about.html"
+  csp="upgrade-insecure-requests; default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://myjapanesenametranslator.com data:; connect-src 'self' https://www.google-analytics.com;"
   ogTitle="About Us | My Japanese Name Translator"
   ogDescription="Founded by Daniel Sato, a Japanese linguistics expert specializing in accurate English-to-Japanese name conversion using kanji, romaji, and cultural context."
   twitterTitle="About Us | My Japanese Name Translator"
@@ -55,8 +56,7 @@ import LegalLayout from '../layouts/LegalLayout.astro';
             "https://www.linkedin.com/in/daniel-sato-japanese/",
             "https://github.com/DanielJapanese",
             "https://www.pinterest.com/Danielsatojapanese/",
-            "https://bsky.app/profile/danielsatojapanese.bsky.social",
-            "https://linktr.ee/danielsatojapanese"
+            "https://bsky.app/profile/danielsatojapanese.bsky.social"
           ],
           "worksFor": {
             "@id": "https://myjapanesenametranslator.com/#organization"
@@ -98,9 +98,7 @@ import LegalLayout from '../layouts/LegalLayout.astro';
             "https://github.com/DanielJapanese",
             "https://www.pinterest.com/Danielsatojapanese/",
             "https://www.linkedin.com/in/daniel-sato-japanese/",
-            "https://bsky.app/profile/danielsatojapanese.bsky.social",
-            "https://linktr.ee/danielsatojapanese",
-            "https://app.raindrop.io/my/66496713"
+            "https://bsky.app/profile/danielsatojapanese.bsky.social"
           ],
           "knowsAbout": [
             {
@@ -116,8 +114,23 @@ import LegalLayout from '../layouts/LegalLayout.astro';
           ]
         },
         {
+          "@type": "WebSite",
+          "@id": "https://myjapanesenametranslator.com/#website",
+          "url": "https://myjapanesenametranslator.com/",
+          "name": "My Japanese Name Translator",
+          "alternateName": "Japanese Name Converter",
+          "description": "Free Japanese name converter tool. Instantly convert your English name to authentic Katakana (カタカナ), Hiragana (ひらがな), and Kanji (漢字) with pronunciation guides and cultural meanings.",
+          "inLanguage": "en",
+          "publisher": {
+            "@id": "https://myjapanesenametranslator.com/#organization"
+          },
+          "creator": {
+            "@id": "https://myjapanesenametranslator.com/#danielsato"
+          }
+        },
+        {
           "@type": "AboutPage",
-          "@id": "https://myjapanesenametranslator.com/about#webpage",
+          "@id": "https://myjapanesenametranslator.com/about.html#webpage",
           "url": "https://myjapanesenametranslator.com/about.html",
           "name": "About Us | My Japanese Name Translator",
           "description": "Learn about My Japanese Name Translator, founded by Daniel Sato, a Japanese linguistics expert specializing in accurate English-to-Japanese name conversion.",
@@ -132,12 +145,12 @@ import LegalLayout from '../layouts/LegalLayout.astro';
           "datePublished": "2026-01-01",
           "dateModified": "2026-02-06",
           "breadcrumb": {
-            "@id": "https://myjapanesenametranslator.com/about#breadcrumb"
+            "@id": "https://myjapanesenametranslator.com/about.html#breadcrumb"
           }
         },
         {
           "@type": "BreadcrumbList",
-          "@id": "https://myjapanesenametranslator.com/about#breadcrumb",
+          "@id": "https://myjapanesenametranslator.com/about.html#breadcrumb",
           "itemListElement": [
             {
               "@type": "ListItem",
