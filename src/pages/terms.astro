@@ -3,15 +3,18 @@ import LegalLayout from '../layouts/LegalLayout.astro';
 ---
 <LegalLayout
   title="Terms of Service | My Japanese Name Translator"
-  description="Terms of Service for My Japanese Name Translator. Read our terms covering service usage, name translation accuracy disclaimer, intellectual property, and user conduct."
-  canonical="https://myjapanesenametranslator.com/terms"
+  description="Terms of Service for My Japanese Name Translator covering service usage, name translation disclaimers, and user conduct."
+  canonical="https://myjapanesenametranslator.com/terms.html"
+  csp="upgrade-insecure-requests; default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://myjapanesenametranslator.com data:; connect-src 'self' https://www.google-analytics.com;"
+  ogTitle="Terms of Service | My Japanese Name Translator"
   ogDescription="Terms of Service for My Japanese Name Translator. Read our terms covering service usage, accuracy disclaimers, and user conduct."
+  twitterTitle="Terms of Service | My Japanese Name Translator"
   twitterDescription="Terms of Service for My Japanese Name Translator. Service usage terms, disclaimers, and user conduct rules."
   bannerKanji1="規"
   bannerKanji2="約"
   bannerTitle="Terms of Service"
   bannerSubtitle="Please read these terms carefully before using our services"
-  currentPage="terms"
+  currentPage="none"
 >
   <Fragment slot="schema" set:html={`
     <script type="application/ld+json">
@@ -53,8 +56,7 @@ import LegalLayout from '../layouts/LegalLayout.astro';
             "https://www.linkedin.com/in/daniel-sato-japanese/",
             "https://github.com/DanielJapanese",
             "https://www.pinterest.com/Danielsatojapanese/",
-            "https://bsky.app/profile/danielsatojapanese.bsky.social",
-            "https://linktr.ee/danielsatojapanese"
+            "https://bsky.app/profile/danielsatojapanese.bsky.social"
           ],
           "worksFor": {
             "@id": "https://myjapanesenametranslator.com/#organization"
@@ -96,9 +98,7 @@ import LegalLayout from '../layouts/LegalLayout.astro';
             "https://github.com/DanielJapanese",
             "https://www.pinterest.com/Danielsatojapanese/",
             "https://www.linkedin.com/in/daniel-sato-japanese/",
-            "https://bsky.app/profile/danielsatojapanese.bsky.social",
-            "https://linktr.ee/danielsatojapanese",
-            "https://app.raindrop.io/my/66496713"
+            "https://bsky.app/profile/danielsatojapanese.bsky.social"
           ],
           "knowsAbout": [
             {
@@ -114,8 +114,23 @@ import LegalLayout from '../layouts/LegalLayout.astro';
           ]
         },
         {
+          "@type": "WebSite",
+          "@id": "https://myjapanesenametranslator.com/#website",
+          "url": "https://myjapanesenametranslator.com/",
+          "name": "My Japanese Name Translator",
+          "alternateName": "Japanese Name Converter",
+          "description": "Free Japanese name converter tool. Instantly convert your English name to authentic Katakana (カタカナ), Hiragana (ひらがな), and Kanji (漢字) with pronunciation guides and cultural meanings.",
+          "inLanguage": "en",
+          "publisher": {
+            "@id": "https://myjapanesenametranslator.com/#organization"
+          },
+          "creator": {
+            "@id": "https://myjapanesenametranslator.com/#danielsato"
+          }
+        },
+        {
           "@type": "WebPage",
-          "@id": "https://myjapanesenametranslator.com/terms#webpage",
+          "@id": "https://myjapanesenametranslator.com/terms.html#webpage",
           "url": "https://myjapanesenametranslator.com/terms.html",
           "name": "Terms of Service | My Japanese Name Translator",
           "description": "Terms of Service for My Japanese Name Translator. Service usage terms, name translation accuracy disclaimer, intellectual property, and user conduct.",
@@ -130,12 +145,12 @@ import LegalLayout from '../layouts/LegalLayout.astro';
           "datePublished": "2026-01-01",
           "dateModified": "2026-02-06",
           "breadcrumb": {
-            "@id": "https://myjapanesenametranslator.com/terms#breadcrumb"
+            "@id": "https://myjapanesenametranslator.com/terms.html#breadcrumb"
           }
         },
         {
           "@type": "BreadcrumbList",
-          "@id": "https://myjapanesenametranslator.com/terms#breadcrumb",
+          "@id": "https://myjapanesenametranslator.com/terms.html#breadcrumb",
           "itemListElement": [
             {
               "@type": "ListItem",
