@@ -1,0 +1,29 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/site.css';
+import '../styles/home.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  ogImage?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  twitterTitle?: string;
+  twitterDescription?: string;
+}
+const props = Astro.props;
+---
+<BaseLayout {...props}>
+  <slot name="schema" slot="schema" />
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <Header currentPage="home" />
+
+  <slot />
+
+  <Footer />
+</BaseLayout>
