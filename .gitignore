@@ -1,6 +1,5 @@
 node_modules/
 dist/
-current/
 .astro/
 .DS_Store
 *.log
