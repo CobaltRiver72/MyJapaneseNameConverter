@@ -584,23 +584,11 @@ import '../styles/kanji.css';
     <!-- Patch: kuromoji's bundled path.join strips the protocol double-slash
          from URLs (https:// becomes https:/). This permanent XHR patch fixes
          mangled URLs before they are sent. Must run BEFORE library scripts load. -->
-    <Fragment set:html={`<script>
-    (function() {
-        var origOpen = XMLHttpRequest.prototype.open;
-        XMLHttpRequest.prototype.open = function() {
-            var args = Array.prototype.slice.call(arguments);
-            if (typeof args[1] === 'string') {
-                args[1] = args[1].replace(/^https:\\/(?!\\/)/, 'https://');
-                args[1] = args[1].replace(/^http:\\/(?!\\/)/, 'http://');
-            }
-            return origOpen.apply(this, args);
-        };
-    })();
-    <\/script>`} />
+    <script is:inline src="/scripts/kanji-xhr-patch.js"></script>
 
     <!-- Kuroshiro Libraries -->
-    <Fragment set:html={`<script src="https://cdn.jsdelivr.net/npm/kuroshiro@1.2.0/dist/kuroshiro.min.js"><\/script>`} />
-    <Fragment set:html={`<script src="https://cdn.jsdelivr.net/npm/kuroshiro-analyzer-kuromoji@1.1.0/dist/kuroshiro-analyzer-kuromoji.min.js"><\/script>`} />
+    <script is:inline src="https://cdn.jsdelivr.net/npm/kuroshiro@1.2.0/dist/kuroshiro.min.js"></script>
+    <script is:inline src="https://cdn.jsdelivr.net/npm/kuroshiro-analyzer-kuromoji@1.1.0/dist/kuroshiro-analyzer-kuromoji.min.js"></script>
 
     <script is:inline src="/scripts/kanji.js"></script>
 </BaseLayout>
