@@ -239,10 +239,14 @@ function convertName() {
     const input = document.getElementById('nameInput').value.trim();
     if (!input) return;
 
-    // ADD THESE 2 LINES 👇
-    history.pushState(null, '', `#?q=${encodeURIComponent(input)}`);
+    // Only push a new history entry when the URL would actually change.
+    // Without this guard, Back-button-triggered conversions (via popstate
+    // → convertName) would re-push the same hash and trap the user.
+    const desiredHash = `#?q=${encodeURIComponent(input)}`;
+    if (window.location.hash !== desiredHash) {
+        history.pushState(null, '', desiredHash);
+    }
     gtag('event', 'page_view', { page_title: `Japanese Name for ${input}`, page_location: window.location.href });
-    // END OF ADDITION 👆
 
     const nameLower = input.toLowerCase();
     let katakana, romaji, hiragana, kanji;
