@@ -6,6 +6,7 @@ const PAGES = ['index.html', 'about.html', 'privacy.html', 'terms.html', 'contac
 
 function normalize(html) {
   return html
+    .replace(/<noscript[^>]*>[\s\S]*?<\/noscript>/g, '')
     .replace(/<style[^>]*>[\s\S]*?<\/style>/g, '')
     .replace(/<link[^>]*rel="stylesheet"[^>]*href="\/_astro\/[^"]+"[^>]*>/g, '')
     .replace(/<script(?![^>]*type="application\/ld\+json")[^>]*>[\s\S]*?<\/script>/g, '')
