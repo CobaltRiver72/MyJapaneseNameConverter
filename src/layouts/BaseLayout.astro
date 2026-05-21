@@ -66,21 +66,20 @@ const resolvedTwitterDescription = twitterDescription ?? description;
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="https://myjapanesenametranslator.com/Favicon-My-Japanese-Name-Translator.png">
     <slot name="head-extra" />
-<slot name="schema" />
+    <slot name="schema" />
 
+    <Fragment set:html={`<!-- Google tag (gtag.js) -->`} />
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-BJFJN4M7TD"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-BJFJN4M7TD');
+    </script>
 
-<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-BJFJN4M7TD"></script>
-<script is:inline>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-BJFJN4M7TD');
-</script>
-<noscript><style>@media (max-width:640px){.header-nav{display:flex !important;}.mobile-menu-btn{display:none !important;}}</style></noscript>
+    <noscript><style>@media (max-width:640px){.header-nav{display:flex !important;}.mobile-menu-btn{display:none !important;}}</style></noscript>
 </head>
 <body>
-
     <slot />
 </body>
 </html>
