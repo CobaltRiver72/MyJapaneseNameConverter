@@ -1,0 +1,29 @@
+---
+import LegalLayout from '../layouts/LegalLayout.astro';
+---
+<LegalLayout
+  title="Page Not Found | My Japanese Name Translator"
+  description="The page you're looking for doesn't exist. Try our free Japanese Name Translator or Kanji to Hiragana Converter instead."
+  canonical="https://myjapanesenametranslator.com/404.html"
+  csp="upgrade-insecure-requests; default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://myjapanesenametranslator.com data:; connect-src 'self' https://www.google-analytics.com;"
+  bannerKanji1="迷"
+  bannerKanji2="子"
+  bannerTitle="Page Not Found"
+  bannerSubtitle="The page you're looking for has moved or doesn't exist. Try one of our tools instead."
+  currentPage="none"
+>
+  <article class="content-card">
+    <h2>Looking for something?</h2>
+    <p>The page you tried to reach is no longer here. Here are some popular destinations on our site:</p>
+    <ul>
+      <li><strong><a href="/">Japanese Name Translator</a></strong> — Convert your English name into authentic Katakana, Hiragana, and Kanji with pronunciation guides.</li>
+      <li><strong><a href="/kanji-to-hiragana-converter.html">Kanji to Hiragana Converter</a></strong> — Convert Japanese kanji text into hiragana readings with furigana and romaji.</li>
+      <li><strong><a href="/about.html">About Us</a></strong> — Learn about our mission and the founder, Daniel Sato.</li>
+      <li><strong><a href="/contact.html">Contact</a></strong> — Get in touch with questions about Japanese name translations or kanji meanings.</li>
+    </ul>
+
+    <hr class="section-divider">
+
+    <p>If you reached this page from a broken link on our site, please <a href="/contact.html">let us know</a> so we can fix it.</p>
+  </article>
+</LegalLayout>

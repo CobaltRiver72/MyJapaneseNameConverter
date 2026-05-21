@@ -5,7 +5,6 @@ import Footer from '../components/Footer.astro';
 import PageBanner from '../components/PageBanner.astro';
 import '../styles/site.css';
 import '../styles/legal.css';
-import '../scripts/site.js';
 
 interface Props {
   title: string;
@@ -57,4 +56,5 @@ const {
       <slot />
     </main>
     <Footer nameTranslatorHref="/" />
+    <script is:inline src="/scripts/site.js"></script>
 </BaseLayout>
