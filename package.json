@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
+    "test": "node --test scripts/*.test.mjs",
     "build": "astro build",
     "preview": "astro preview",
     "verify": "node scripts/verify.mjs",
-    "check": "npm run build && npm run verify"
+    "check": "npm run test && npm run build && npm run verify"
   },
   "dependencies": {
     "astro": "^5.0.0"

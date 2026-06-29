@@ -5,7 +5,4 @@ Allow: /
 # Sitemap
 Sitemap: https://myjapanesenametranslator.com/sitemap.xml
 
-# Crawl-delay (optional, respectful crawling)
-Crawl-delay: 1
-
 # Disallow nothing — all pages are public

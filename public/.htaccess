@@ -1,0 +1,66 @@
+# URL POLICY (see docs/URL-POLICY.md — do not change without reading it):
+# - LEGACY pages keep their indexed .html URLs forever: served with 200, no
+#   redirects, .html self-canonicals. Google must see zero change on them.
+#   Legacy = about, contact, privacy, terms, kanji-to-hiragana-converter.
+# - ALL NEW pages are extensionless. Their .html build artifacts are served
+#   via the internal rewrite below; the .html variant 301s to the clean URL.
+RewriteEngine On
+
+# Canonical host is non-www (the site is indexed under non-www).
+# Redirect any www request to the same path on the bare domain.
+RewriteCond %{HTTP_HOST} ^www\.myjapanesenametranslator\.com$ [NC]
+RewriteRule ^(.*)$ https://myjapanesenametranslator.com/$1 [R=301,L]
+
+# Normalize accidental /index.html requests to the canonical homepage URL.
+RewriteRule ^index\.html$ / [R=301,L]
+
+# Silo hub pages (e.g. /converter) live at <hub>.html alongside a folder of the
+# same name that holds the spoke pages (e.g. /converter/hiragana-to-katakana).
+# Serve the hub file directly and canonicalize the trailing slash away.
+# DirectorySlash Off stops Apache auto-301'ing /converter -> /converter/.
+DirectorySlash Off
+RewriteRule ^converter/$ /converter [R=301,L]
+RewriteRule ^converter$ /converter.html [L]
+
+# NEW pages only: redirect .html variants to the extensionless URL.
+# Legacy indexed pages are exempt and keep serving .html with 200.
+RewriteCond %{REQUEST_URI} !^/(about|contact|privacy|terms|kanji-to-hiragana-converter|404)\.html$
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+RewriteRule ^(.+)\.html$ /$1 [R=301,L]
+
+# Serve extensionless URLs from their .html build artifacts
+# (internal rewrite — the URL in the browser stays clean, no redirect).
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L]
+
+# Browser caching: HTML always revalidates (deploys show up immediately);
+# static assets are cached so repeat visits and page-to-page navigation are fast.
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/html "access plus 0 seconds"
+    ExpiresByType image/png "access plus 6 months"
+    ExpiresByType image/jpeg "access plus 6 months"
+    ExpiresByType image/svg+xml "access plus 6 months"
+    ExpiresByType image/webp "access plus 6 months"
+    ExpiresByType image/x-icon "access plus 6 months"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+    ExpiresByType application/json "access plus 1 week"
+</IfModule>
+
+# Security headers (response headers — complements the CSP meta tag in each page).
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Strict-Transport-Security "max-age=31536000"
+</IfModule>
+
+# Serve the branded 404 page for missing URLs.
+# Apache keeps the genuine HTTP 404 status while rendering /404.html,
+# so Google treats unknown URLs as real 404s (not soft-404s).
+ErrorDocument 404 /404.html
+ErrorDocument 403 /404.html

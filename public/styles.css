@@ -742,6 +742,70 @@ body::before {
     padding-top: 0.75rem;
 }
 
+/* === RELATED TOOLS === */
+.related-section {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 1.5rem 4rem;
+}
+
+.related-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.related-card {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 8px var(--shadow);
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s;
+    display: block;
+}
+
+.related-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px var(--shadow-md);
+}
+
+.related-card .related-icon {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.8rem;
+    color: var(--vermillion);
+    margin-bottom: 0.75rem;
+}
+
+.related-card h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.35rem;
+    color: var(--ink);
+}
+
+.related-card p {
+    font-size: 0.82rem;
+    color: var(--slate);
+    line-height: 1.55;
+}
+
+@media (max-width: 640px) {
+    .related-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* === FOOTER === */
 .site-footer {
     background: var(--ink);

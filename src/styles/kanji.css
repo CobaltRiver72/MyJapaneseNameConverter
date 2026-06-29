@@ -1177,8 +1177,76 @@
         .panel > .raw-view { display: none; }
         .panel.raw-mode > .flat-line,
         .panel.raw-mode > .main-tokens,
-        .panel.raw-mode > .breakdown-wrap { display: none; }
+        .panel.raw-mode > .breakdown-wrap,
+        .panel.raw-mode > .kana-comparison { display: none; }
         .panel.raw-mode > .raw-view { display: block; }
+
+        /* === KANA CONVERTER SUMMARY === */
+        .kana-summary {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.55rem;
+            margin: 0 0 1rem;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.78rem;
+            line-height: 1.4;
+        }
+        .kana-summary span {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            background: var(--cream);
+            color: var(--slate);
+            border-radius: 999px;
+            padding: 0.28rem 0.7rem;
+        }
+        .kana-summary strong {
+            color: var(--ink);
+            font-weight: 700;
+        }
+        .kana-comparison {
+            display: grid;
+            gap: 0.75rem;
+        }
+        .kana-comparison div {
+            background: var(--white);
+            border: 1px solid rgba(26,26,46,0.08);
+            border-radius: 10px;
+            padding: 0.9rem 1rem;
+        }
+        .kana-comparison span {
+            display: block;
+            margin-bottom: 0.35rem;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--slate);
+        }
+        .kana-comparison strong {
+            display: block;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 1.25rem;
+            line-height: 1.6;
+            color: var(--ink);
+            word-break: break-word;
+        }
+        .kana-breakdown-table td.word,
+        .kana-breakdown-table td.reading {
+            font-size: 1.08rem;
+        }
+        .script-badge {
+            display: inline-block;
+            border-radius: 4px;
+            padding: 2px 7px;
+            background: var(--cream);
+            color: var(--slate);
+            font-size: 0.78rem;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+            line-height: 1.35;
+        }
 
         /* === MAIN PANEL TOKENS === */
         .main-tokens {

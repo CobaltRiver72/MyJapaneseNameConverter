@@ -1,0 +1,128 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { STANDARD_CSP } from '../lib/csp.js';
+import '../styles/kanji.css';
+---
+<BaseLayout
+  title="Japanese Converter Tools | My Japanese Name Translator"
+  description="Browse the free Japanese converter tools from My Japanese Name Translator — switch text between kanji, hiragana, katakana, and romaji instantly in your browser."
+  canonical="https://myjapanesenametranslator.com/converter"
+  csp={STANDARD_CSP}
+  ogTitle="Japanese Converter Tools | My Japanese Name Translator"
+  ogDescription="Free Japanese script converters from My Japanese Name Translator — kanji to hiragana, hiragana to katakana, and more. Fast, private, and browser-based."
+  twitterTitle="Japanese Converter Tools | My Japanese Name Translator"
+  twitterDescription="Free Japanese script converters from My Japanese Name Translator — kanji to hiragana, hiragana to katakana, and more."
+>
+  <Fragment slot="schema" set:html={`<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://myjapanesenametranslator.com/#organization",
+          "name": "My Japanese Name Translator",
+          "url": "https://myjapanesenametranslator.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://myjapanesenametranslator.com/My-Japanese-Name-Translator-Logo.png"
+          }
+        },
+        {
+          "@type": "CollectionPage",
+          "@id": "https://myjapanesenametranslator.com/converter#webpage",
+          "url": "https://myjapanesenametranslator.com/converter",
+          "name": "Japanese Converter Tools",
+          "description": "Free Japanese script converters from My Japanese Name Translator — switch text between kanji, hiragana, katakana, and romaji instantly in your browser.",
+          "isPartOf": { "@id": "https://myjapanesenametranslator.com/#organization" },
+          "mainEntity": { "@id": "https://myjapanesenametranslator.com/converter#tools" }
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://myjapanesenametranslator.com/converter#tools",
+          "name": "Japanese Converter Tools",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Kanji to Hiragana Converter",
+              "url": "https://myjapanesenametranslator.com/kanji-to-hiragana-converter.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Hiragana to Katakana Converter",
+              "url": "https://myjapanesenametranslator.com/converter/hiragana-to-katakana"
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://myjapanesenametranslator.com/converter#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://myjapanesenametranslator.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Japanese Converter Tools",
+              "item": "https://myjapanesenametranslator.com/converter"
+            }
+          ]
+        }
+      ]
+    }
+    </script>`} />
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <Header currentPage="none" nameTranslatorHref="/" />
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-kanji k1" aria-hidden="true">変</div>
+        <div class="hero-kanji k2" aria-hidden="true">換</div>
+        <div class="hero-kanji k3" aria-hidden="true">仮</div>
+        <div class="hero-kanji k4" aria-hidden="true">名</div>
+        <div class="hero-content">
+            <div class="hero-badge animate-in delay-1">Free Japanese Tools</div>
+            <h1 class="animate-in delay-2">Japanese Converter Tools</h1>
+            <p class="animate-in delay-3">Free, browser-based converters for switching Japanese text between kanji, hiragana, katakana, and romaji. Pick a tool below to get started — every conversion runs instantly on your device, with nothing sent to a server.</p>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main id="main-content" role="main">
+
+    <!-- BREADCRUMB -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a><span>›</span><strong>Converters</strong>
+    </nav>
+
+    <!-- TOOLS -->
+    <section class="related-section" aria-label="Japanese converter tools">
+        <h2>Choose a Converter</h2>
+        <div class="related-grid">
+            <a href="/kanji-to-hiragana-converter.html" class="related-card">
+                <div class="related-icon" aria-hidden="true">読</div>
+                <h3>Kanji to Hiragana Converter</h3>
+                <p>Convert Japanese kanji text into hiragana readings with furigana, romaji, glosses, and a word-by-word breakdown table.</p>
+            </a>
+            <a href="/converter/hiragana-to-katakana" class="related-card">
+                <div class="related-icon" aria-hidden="true">ア</div>
+                <h3>Hiragana to Katakana Converter</h3>
+                <p>Convert Japanese hiragana into katakana instantly, with reverse katakana to hiragana conversion, copy buttons, and a character-by-character table.</p>
+            </a>
+        </div>
+    </section>
+
+    </main>
+
+    <Footer nameTranslatorHref="/" />
+
+    <script is:inline src="/scripts/site.js"></script>
+</BaseLayout>

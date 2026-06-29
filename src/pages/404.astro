@@ -3,8 +3,9 @@ import LegalLayout from '../layouts/LegalLayout.astro';
 ---
 <LegalLayout
   title="Page Not Found | My Japanese Name Translator"
-  description="The page you're looking for doesn't exist. Try our free Japanese Name Translator or Kanji to Hiragana Converter instead."
+  description="The page you're looking for doesn't exist. Try our free Japanese Name Translator, Kanji Converter, or Kana Converter instead."
   canonical="https://myjapanesenametranslator.com/404.html"
+  robots="noindex, follow"
   csp="upgrade-insecure-requests; default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://myjapanesenametranslator.com data:; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.google.com;"
   bannerKanji1="迷"
   bannerKanji2="子"
@@ -18,6 +19,7 @@ import LegalLayout from '../layouts/LegalLayout.astro';
     <ul>
       <li><strong><a href="/">Japanese Name Translator</a></strong> — Convert your English name into authentic Katakana, Hiragana, and Kanji with pronunciation guides.</li>
       <li><strong><a href="/kanji-to-hiragana-converter.html">Kanji to Hiragana Converter</a></strong> — Convert Japanese kanji text into hiragana readings with furigana and romaji.</li>
+      <li><strong><a href="/converter/hiragana-to-katakana">Hiragana to Katakana Converter</a></strong> — Convert Japanese hiragana into katakana with reverse conversion and character tables.</li>
       <li><strong><a href="/about.html">About Us</a></strong> — Learn about our mission and the founder, Daniel Sato.</li>
       <li><strong><a href="/contact.html">Contact</a></strong> — Get in touch with questions about Japanese name translations or kanji meanings.</li>
     </ul>

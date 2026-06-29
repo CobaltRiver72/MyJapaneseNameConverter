@@ -21,7 +21,9 @@ npm install
 npm run dev          # http://localhost:4321
 ```
 
-The dev server hot-reloads CSS/JS/HTML changes instantly. All 5 pages are served at their `.html` URLs (e.g., `http://localhost:4321/about.html`).
+The dev server hot-reloads CSS/JS/HTML changes instantly.
+
+**URL policy (important — see `docs/URL-POLICY.md`):** legacy pages keep their indexed `.html` URLs (`/about.html`, `/contact.html`, `/privacy.html`, `/terms.html`, `/kanji-to-hiragana-converter.html`) and must never be redirected; all pages created after 2026-06-09 use extensionless URLs (e.g., `/hiragana-to-katakana-converter`), served from their `.html` build artifacts by an internal rewrite in `public/.htaccess`.
 
 ### Build & verify before deploy
 
@@ -40,7 +42,7 @@ Run `npm run preview` and open each page in a browser. Check:
 - Mobile menu opens/closes (resize window below 640px)
 - Footer renders with brand, links, contact email, copyright
 - **Homepage `/`:** converter accepts input ("John" → ジョン/じょん/Jon), copy buttons work, popular-name chips populate and trigger conversion, FAQ accordions expand
-- **`/contact.html`:** form validation shows error messages; valid submit opens mailto
+- **`/contact`:** form validation shows error messages; valid submit opens mailto
 - **All pages:** no console errors in DevTools
 
 ### Deploy to Hostinger
@@ -152,10 +154,10 @@ Japanese names carry deep cultural and linguistic significance. An inaccurate or
 ## 📄 Site Pages
 
 - **[Home](https://myjapanesenametranslator.com)** — Name converter tool, popular names, how it works, FAQ
-- **[About Us](https://myjapanesenametranslator.com/about)** — Our mission, founder info, expertise
-- **[Privacy Policy](https://myjapanesenametranslator.com/privacy)** — GDPR & CCPA compliant, cookie policy, data practices
-- **[Terms of Service](https://myjapanesenametranslator.com/terms)** — Usage terms, accuracy disclaimers, governing law
-- **[Contact Us](https://myjapanesenametranslator.com/contact)** — Contact form, email, location info
+- **[About Us](https://myjapanesenametranslator.com/about.html)** — Our mission, founder info, expertise
+- **[Privacy Policy](https://myjapanesenametranslator.com/privacy.html)** — GDPR & CCPA compliant, cookie policy, data practices
+- **[Terms of Service](https://myjapanesenametranslator.com/terms.html)** — Usage terms, accuracy disclaimers, governing law
+- **[Contact Us](https://myjapanesenametranslator.com/contact.html)** — Contact form, email, location info
 
 ## 🎓 About
 
@@ -167,7 +169,7 @@ Daniel brings deep expertise in Japanese phonology, kanji semantics, and cross-c
 
 - 🌐 **Website**: [myjapanesenametranslator.com](https://myjapanesenametranslator.com)
 - 📧 **Email**: [contact@myjapanesenametranslator.com](mailto:contact@myjapanesenametranslator.com)
-- 💬 **Contact Page**: [myjapanesenametranslator.com/contact](https://myjapanesenametranslator.com/contact)
+- 💬 **Contact Page**: [myjapanesenametranslator.com/contact](https://myjapanesenametranslator.com/contact.html)
 - 📍 **Location**: Stockton, California, USA
 - ⏱️ **Response Time**: 24–48 hours
 

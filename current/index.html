@@ -9,9 +9,9 @@
     <meta name="robots" content="index, follow">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://myjapanesenametranslator.com data:; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.google.com;">
-    <script>if(location.protocol!=="https:"&&!/^(localhost|127\.0\.0\.1)$/.test(location.hostname))location.replace("https://"+location.host+location.pathname+location.search+location.hash);</script>
+    <script type="module">location.protocol!=="https:"&&!/^(localhost|127\.0\.0\.1)$/.test(location.hostname)&&location.replace("https://"+location.host+location.pathname+location.search+location.hash);</script>
     <link rel="apple-touch-icon" href="https://myjapanesenametranslator.com/Favicon-My-Japanese-Name-Translator.png">
-    
+
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://myjapanesenametranslator.com/">
@@ -20,19 +20,19 @@
     <meta property="og:image" content="https://myjapanesenametranslator.com/My-Japanese-Name-Translator-Logo.png">
     <meta property="og:site_name" content="My Japanese Name Translator">
     <meta property="og:locale" content="en_US">
-    
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="My Name in Japanese | Free Japanese Name Converter">
     <meta name="twitter:description" content="Write your name in Japanese. Free translator for Katakana, Hiragana, and Kanji. Instant conversion, pronunciation guide, and romaji.">
     <meta name="twitter:image" content="https://myjapanesenametranslator.com/My-Japanese-Name-Translator-Logo.png">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="https://myjapanesenametranslator.com/Favicon-My-Japanese-Name-Translator.png">
     <link rel="stylesheet" href="/styles.css">
-<script type="application/ld+json">
+    <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
@@ -457,44 +457,44 @@
 }
 </script>
 
-
-
-
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BJFJN4M7TD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-BJFJN4M7TD');
-</script>
-<noscript><style>@media (max-width:640px){.header-nav{display:flex !important;}.mobile-menu-btn{display:none !important;}}</style></noscript>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BJFJN4M7TD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-BJFJN4M7TD');
+    </script>
 </head>
 <body>
+    
+    
+    
 
-    <!-- SKIP LINK -->
+    
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- HEADER -->
-    <header class="site-header" role="banner">
+    <!-- HEADER --><header class="site-header" role="banner">
         <a href="/" class="logo" aria-label="My Japanese Name Translator - Home">
             <img src="https://myjapanesenametranslator.com/My-Japanese-Name-Translator-Logo.png" alt="My Japanese Name Translator Logo" class="logo-img" width="132" height="44">
         </a>
         <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false" onclick="toggleMobileNav()">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
         </button>
         <nav class="header-nav" role="navigation" aria-label="Main navigation">
             <a href="/" aria-current="page">Home</a>
             <a href="#converter">Name Translator</a>
             <a href="/kanji-to-hiragana-converter.html">Kanji Converter</a>
+            <a href="/converter/hiragana-to-katakana">Kana Converter</a>
             <a href="/about.html">About</a>
             <a href="/contact.html">Contact</a>
         </nav>
     </header>
 
-    <!-- HERO -->
+    
+  
+
+    
     <section class="hero">
         <div class="hero-kanji k1" aria-hidden="true">名</div>
         <div class="hero-kanji k2" aria-hidden="true">前</div>
@@ -510,7 +510,7 @@
         </div>
     </section>
 
-    <!-- MAIN CONTENT -->
+    
     <main id="main-content" role="main">
 
     <!-- CONVERTER -->
@@ -544,10 +544,10 @@
                         </div>
                         <div class="result-actions">
                             <button class="action-btn" aria-label="Copy Katakana to clipboard" onclick="copyResult('katakanaOutput')">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg>
                             </button>
                             <button class="action-btn" id="speakKatakana" aria-label="Listen to Katakana" onclick="speakResult('katakanaOutput', 'ja-JP', 'speakKatakana')">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
                             </button>
                         </div>
                     </div>
@@ -560,10 +560,10 @@
                         </div>
                         <div class="result-actions">
                             <button class="action-btn" aria-label="Copy Hiragana to clipboard" onclick="copyResult('hiraganaOutput')">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg>
                             </button>
                             <button class="action-btn" id="speakHiragana" aria-label="Listen to Hiragana" onclick="speakResult('hiraganaOutput', 'ja-JP', 'speakHiragana')">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
                             </button>
                         </div>
                     </div>
@@ -576,10 +576,10 @@
                         </div>
                         <div class="result-actions">
                             <button class="action-btn" aria-label="Copy Kanji to clipboard" onclick="copyResult('kanjiOutput')">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg>
                             </button>
                             <button class="action-btn" id="speakKanji" aria-label="Listen to Kanji" onclick="speakResult('kanjiOutput', 'ja-JP', 'speakKanji')">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
                             </button>
                         </div>
                     </div>
@@ -591,10 +591,10 @@
                         </div>
                         <div class="result-actions">
                             <button class="action-btn" aria-label="Copy Romaji to clipboard" onclick="copyResult('romajiOutput')">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg>
                             </button>
                             <button class="action-btn" id="speakRomaji" aria-label="Listen to Romaji" onclick="speakResult('romajiOutput', 'en-US', 'speakRomaji')">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
                             </button>
                         </div>
                     </div>
@@ -793,16 +793,34 @@
         </div>
     </section>
 
+    <!-- RELATED TOOLS -->
+    <section class="related-section" aria-label="More Japanese language tools">
+        <h2>More Japanese Language Tools</h2>
+        <div class="related-grid">
+            <a href="/kanji-to-hiragana-converter.html" class="related-card">
+                <div class="related-icon" aria-hidden="true">読</div>
+                <h3>Kanji to Hiragana Converter</h3>
+                <p>Convert Japanese kanji text into hiragana readings with furigana, romaji, glosses, and a word-by-word breakdown table.</p>
+            </a>
+            <a href="/converter/hiragana-to-katakana" class="related-card">
+                <div class="related-icon" aria-hidden="true">ア</div>
+                <h3>Hiragana to Katakana Converter</h3>
+                <p>Convert Japanese hiragana into katakana instantly with reverse conversion, copy buttons, and character-by-character tables.</p>
+            </a>
+        </div>
+    </section>
+
     </main>
 
-    <!-- FOOTER -->
-    <footer class="site-footer" role="contentinfo">
+
+    <!-- FOOTER --><footer class="site-footer" role="contentinfo">
         <div class="footer-brand">My Japanese Name Translator</div>
         <div class="footer-tagline">Translate Your Name in Japanese</div>
         <nav class="footer-links" aria-label="Footer navigation">
             <a href="/">Home</a>
             <a href="#converter">Name Translator</a>
             <a href="/kanji-to-hiragana-converter.html">Kanji Converter</a>
+            <a href="/converter/hiragana-to-katakana">Kana Converter</a>
             <a href="/about.html">About</a>
             <a href="/privacy.html">Privacy Policy</a>
             <a href="/terms.html">Terms of Service</a>
@@ -811,13 +829,13 @@
         <div class="footer-contact">
             <a href="mailto:contact@myjapanesenametranslator.com">contact@myjapanesenametranslator.com</a>
         </div>
-        <div class="footer-copy">© 2026 My Japanese Name Translator. All rights reserved.</div>
+        <div class="footer-copy">&copy; 2026 My Japanese Name Translator. All rights reserved.</div>
     </footer>
 
-    <!-- COPIED TOAST -->
+    
     <div class="copied-toast" id="copiedToast" role="status" aria-live="polite">✓ Copied to clipboard</div>
     <div class="copied-toast" id="ttsToast" role="status" aria-live="polite">Text-to-speech not supported in this browser</div>
 
     <script src="/script.js"></script>
-</body>
-</html>
+
+</body></html>

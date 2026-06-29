@@ -11,6 +11,7 @@ interface Props {
   description: string;
   canonical: string;
   csp: string;
+  robots?: string;
   ogTitle?: string;
   ogDescription?: string;
   twitterTitle?: string;
@@ -19,7 +20,7 @@ interface Props {
   bannerKanji2: string;
   bannerTitle: string;
   bannerSubtitle: string;
-  currentPage?: 'home' | 'about' | 'contact' | 'kanji' | 'none';
+  currentPage?: 'home' | 'about' | 'contact' | 'kanji' | 'kana' | 'none';
 }
 
 const {
@@ -27,6 +28,7 @@ const {
   description,
   canonical,
   csp,
+  robots,
   ogTitle,
   ogDescription,
   twitterTitle,
@@ -43,6 +45,7 @@ const {
   {description}
   {canonical}
   {csp}
+  robots={robots}
   ogTitle={ogTitle}
   ogDescription={ogDescription}
   twitterTitle={twitterTitle}
