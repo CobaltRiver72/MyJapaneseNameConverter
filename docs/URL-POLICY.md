@@ -121,11 +121,13 @@ Silo rules:
   7. Caching (`mod_expires`) + security headers (`mod_headers`) — HTML always
      revalidates; static assets cached.
 - Hosting: Hostinger shared hosting (`public_html/`), Apache/LiteSpeed honors `.htaccess`.
-- Verified locally with real Apache 2.4 on 2026-06-09: legacy `.html` URLs all
-  200 with no redirect; extensionless tool URLs 200 clean; `.html` variants of
-  new pages 301 → clean; unknown URLs genuine 404. **The `/converter` silo
-  `.htaccess` rules (hub collision, nested spokes) have NOT yet been retested on
-  real Apache as of 2026-06-10 — do that before relying on them in production.**
+- Verified locally with real Apache 2.4 (macOS httpd 2.4.66, 2026-06-28):
+  legacy `.html` URLs all 200 with no redirect; `/converter` hub 200 and
+  `/converter/` 301 → `/converter`; silo spokes 200 clean with their `.html`
+  variants 301 → clean; `/index.html` 301 → `/`; `www.` → non-www 301; unknown
+  URLs genuine 404; security headers present. The old pre-move flat path
+  `/hiragana-to-katakana-converter(.html)` 404s (never indexed) — add a 301 to
+  `/converter/hiragana-to-katakana` only if a stray link to it ever surfaces.
 
 ## Why this policy exists (context for future agents)
 
