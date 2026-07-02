@@ -20,13 +20,110 @@ import '../styles/kanji.css';
       "@context": "https://schema.org",
       "@graph": [
         {
+          "@type": "Person",
+          "@id": "https://myjapanesenametranslator.com/#danielsato",
+          "name": "Daniel Sato",
+          "givenName": "Daniel",
+          "familyName": "Sato",
+          "jobTitle": "Japanese Linguistics Expert & Name Translation Specialist",
+          "description": "Developer and Japanese linguist specializing in English to Japanese name conversion using culturally accurate kanji, katakana, and hiragana transliteration methods.",
+          "knowsLanguage": ["en", "ja"],
+          "knowsAbout": [
+            {
+              "@type": "Thing",
+              "name": "Japanese language",
+              "sameAs": "https://en.wikipedia.org/wiki/Japanese_language"
+            },
+            {
+              "@type": "Thing",
+              "name": "Katakana",
+              "sameAs": "https://en.wikipedia.org/wiki/Katakana"
+            },
+            {
+              "@type": "Thing",
+              "name": "Hiragana",
+              "sameAs": "https://en.wikipedia.org/wiki/Hiragana"
+            },
+            {
+              "@type": "Thing",
+              "name": "Japanese writing system",
+              "sameAs": "https://en.wikipedia.org/wiki/Japanese_writing_system"
+            }
+          ],
+          "sameAs": [
+            "https://www.linkedin.com/in/daniel-sato-japanese/",
+            "https://github.com/DanielJapanese",
+            "https://www.pinterest.com/Danielsatojapanese/",
+            "https://bsky.app/profile/danielsatojapanese.bsky.social"
+          ],
+          "worksFor": {
+            "@id": "https://myjapanesenametranslator.com/#organization"
+          }
+        },
+        {
           "@type": "Organization",
           "@id": "https://myjapanesenametranslator.com/#organization",
           "name": "My Japanese Name Translator",
+          "alternateName": ["MJNT", "Japanese Name Translator"],
           "url": "https://myjapanesenametranslator.com/",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://myjapanesenametranslator.com/My-Japanese-Name-Translator-Logo.png"
+            "url": "https://myjapanesenametranslator.com/My-Japanese-Name-Translator-Logo.png",
+            "width": 512,
+            "height": 512
+          },
+          "image": "https://myjapanesenametranslator.com/My-Japanese-Name-Translator-Logo.png",
+          "founder": {
+            "@id": "https://myjapanesenametranslator.com/#danielsato"
+          },
+          "foundingDate": "2026",
+          "areaServed": "Worldwide",
+          "slogan": "Translate Your Name in Japanese",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "contact@myjapanesenametranslator.com",
+            "contactType": "customer support",
+            "availableLanguage": ["English", "Japanese"],
+            "areaServed": "Worldwide"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Stockton",
+            "addressRegion": "CA",
+            "addressCountry": "US"
+          },
+          "sameAs": [
+            "https://github.com/DanielJapanese",
+            "https://www.pinterest.com/Danielsatojapanese/",
+            "https://www.linkedin.com/in/daniel-sato-japanese/",
+            "https://bsky.app/profile/danielsatojapanese.bsky.social"
+          ],
+          "knowsAbout": [
+            {
+              "@type": "Thing",
+              "name": "Japanese writing system",
+              "sameAs": "https://en.wikipedia.org/wiki/Japanese_writing_system"
+            },
+            {
+              "@type": "Thing",
+              "name": "Kana",
+              "sameAs": "https://en.wikipedia.org/wiki/Kana"
+            }
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://myjapanesenametranslator.com/#website",
+          "url": "https://myjapanesenametranslator.com/",
+          "name": "My Japanese Name Translator",
+          "alternateName": "Japanese Name Converter",
+          "description": "Free Japanese name converter tool. Instantly convert your English name to authentic Katakana (カタカナ), Hiragana (ひらがな), and Kanji (漢字) with pronunciation guides and cultural meanings.",
+          "inLanguage": "en",
+          "publisher": {
+            "@id": "https://myjapanesenametranslator.com/#organization"
+          },
+          "creator": {
+            "@id": "https://myjapanesenametranslator.com/#danielsato"
           }
         },
         {
@@ -35,7 +132,38 @@ import '../styles/kanji.css';
           "url": "https://myjapanesenametranslator.com/converter",
           "name": "Japanese Converter Tools",
           "description": "Free Japanese script converters from My Japanese Name Translator — switch text between kanji, hiragana, katakana, and romaji instantly in your browser.",
-          "isPartOf": { "@id": "https://myjapanesenametranslator.com/#organization" },
+          "inLanguage": "en",
+          "isPartOf": { "@id": "https://myjapanesenametranslator.com/#website" },
+          "breadcrumb": { "@id": "https://myjapanesenametranslator.com/converter#breadcrumb" },
+          "author": { "@id": "https://myjapanesenametranslator.com/#danielsato" },
+          "publisher": { "@id": "https://myjapanesenametranslator.com/#organization" },
+          "about": [
+            {
+              "@type": "Thing",
+              "name": "Japanese writing system",
+              "sameAs": "https://en.wikipedia.org/wiki/Japanese_writing_system"
+            },
+            {
+              "@type": "Thing",
+              "name": "Kanji",
+              "sameAs": "https://en.wikipedia.org/wiki/Kanji"
+            },
+            {
+              "@type": "Thing",
+              "name": "Hiragana",
+              "sameAs": "https://en.wikipedia.org/wiki/Hiragana"
+            },
+            {
+              "@type": "Thing",
+              "name": "Katakana",
+              "sameAs": "https://en.wikipedia.org/wiki/Katakana"
+            },
+            {
+              "@type": "Thing",
+              "name": "Romanization of Japanese",
+              "sameAs": "https://en.wikipedia.org/wiki/Romanization_of_Japanese"
+            }
+          ],
           "mainEntity": { "@id": "https://myjapanesenametranslator.com/converter#tools" }
         },
         {
@@ -74,13 +202,67 @@ import '../styles/kanji.css';
               "item": "https://myjapanesenametranslator.com/converter"
             }
           ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://myjapanesenametranslator.com/converter#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is a Japanese converter tool?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A Japanese converter tool changes text from one Japanese writing system into another — for example, kanji into hiragana readings, or hiragana into katakana. Every converter on this page runs instantly in your browser and shows romaji so you can pronounce the result."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Which Japanese converter should I use?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Use the Kanji to Hiragana Converter when you need the reading of kanji text, and the Hiragana to Katakana Converter when you need to switch between the two kana scripts. To write an English name in Japanese, use the Japanese Name Translator on our homepage."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the difference between kanji, hiragana, and katakana?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Kanji are logographic characters borrowed from Chinese that carry meaning, while hiragana and katakana are phonetic kana syllabaries. Hiragana is used for native Japanese words and grammar, and katakana is used for loanwords, foreign names, and emphasis."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Are these Japanese converter tools free?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Every converter is completely free, with no account, no usage limits, and no ads."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is my text sent to a server?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Conversions run client-side in your browser, so the text you enter never leaves your device."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I convert my English name to Japanese?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. The Japanese Name Translator on our homepage converts English names into katakana, hiragana, kanji (ateji), and romaji with pronunciation guides and cultural context."
+              }
+            }
+          ]
         }
       ]
     }
     </script>`} />
 
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    <Header currentPage="none" nameTranslatorHref="/" />
+    <Header currentPage="converter" nameTranslatorHref="/" />
 
     <!-- HERO -->
     <section class="hero">
@@ -116,6 +298,140 @@ import '../styles/kanji.css';
                 <div class="related-icon" aria-hidden="true">ア</div>
                 <h3>Hiragana to Katakana Converter</h3>
                 <p>Convert Japanese hiragana into katakana instantly, with reverse katakana to hiragana conversion, copy buttons, and a character-by-character table.</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- HOW THE WRITING SYSTEM FITS TOGETHER -->
+    <section class="how-section" id="writing-systems">
+        <div class="how-card">
+            <h2>One Language, Four Writing Systems</h2>
+            <p>Japanese is written with a mix of scripts. <strong>Kanji (漢字)</strong> are logographic characters that carry meaning, <strong>hiragana (ひらがな)</strong> is the curved kana syllabary used for native words and grammar, and <strong>katakana (カタカナ)</strong> is the angular kana syllabary used for loanwords, foreign names, and emphasis. <strong>Romaji (ローマ字)</strong> writes the same sounds in the Latin alphabet using Hepburn romanization, so learners can pronounce any word.</p>
+
+            <p>Because all four systems can express the same sounds, real Japanese text constantly moves between them — furigana readings above kanji, katakana forms of borrowed words, and romaji in textbooks and passports. That is exactly what these converter tools automate: give them Japanese text in one script, and they return it in another.</p>
+
+            <div class="reading-example">
+                <div class="kanji-big" aria-hidden="true">語</div>
+                <div class="readings">
+                    <strong>Kanji:</strong> <span>日本語</span><br>
+                    <strong>Hiragana:</strong> <span>にほんご</span><br>
+                    <strong>Katakana:</strong> <span>ニホンゴ</span><br>
+                    <strong>Romaji:</strong> <span>nihongo</span> — "Japanese language"
+                </div>
+            </div>
+
+            <p>Use the <a href="/kanji-to-hiragana-converter.html">Kanji to Hiragana Converter</a> when you can see kanji but not read it — it adds hiragana readings, romaji, and word-by-word meanings. Use the <a href="/converter/hiragana-to-katakana">Hiragana to Katakana Converter</a> to switch between the two kana scripts in either direction. And to write your own English name in Japanese, the <a href="/">Japanese Name Translator</a> converts it into katakana, hiragana, kanji (ateji), and romaji.</p>
+        </div>
+    </section>
+
+    <!-- WHICH CONVERTER -->
+    <section class="examples-section" id="which-converter">
+        <h2>Which Japanese Converter Do You Need?</h2>
+        <div class="examples-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>You want to…</th>
+                        <th>Use this tool</th>
+                        <th>What you get</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Read kanji you can't pronounce</td>
+                        <td><a href="/kanji-to-hiragana-converter.html">Kanji to Hiragana Converter</a></td>
+                        <td>Hiragana readings with furigana, romaji, and word-by-word meanings</td>
+                    </tr>
+                    <tr>
+                        <td>Rewrite hiragana as katakana</td>
+                        <td><a href="/converter/hiragana-to-katakana">Hiragana to Katakana Converter</a></td>
+                        <td>Instant katakana output with copy buttons and a kana pair table</td>
+                    </tr>
+                    <tr>
+                        <td>Check katakana readings in hiragana</td>
+                        <td><a href="/converter/hiragana-to-katakana">Hiragana to Katakana Converter</a> (Hiragana mode)</td>
+                        <td>Reverse katakana to hiragana conversion for study and reading checks</td>
+                    </tr>
+                    <tr>
+                        <td>Write your English name in Japanese</td>
+                        <td><a href="/">Japanese Name Translator</a></td>
+                        <td>Your name in katakana, hiragana, kanji (ateji), and romaji</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- WHY USE -->
+    <section class="features-section">
+        <h2>Why Use These Japanese Converters</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><span style="font-family:'Noto Sans JP',sans-serif;">速</span></div>
+                <h3>Instant &amp; Browser-Based</h3>
+                <p>Every conversion runs directly in your browser with no sign-up, no waiting, and no server roundtrips.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><span style="font-family:'Noto Sans JP',sans-serif;">守</span></div>
+                <h3>Private by Design</h3>
+                <p>The text you enter never leaves your device — nothing is uploaded, logged, or stored anywhere.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">0</div>
+                <h3>100% Free</h3>
+                <p>No account, no limits, and no ads. Use every converter as often as you need for Japanese study or work.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><span style="font-family:'Noto Sans JP',sans-serif;">学</span></div>
+                <h3>Built for Learners</h3>
+                <p>Romaji pronunciation, furigana readings, character tables, and one-click copy support real Japanese study.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section" id="faq">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item open">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="true" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">What is a Japanese converter tool?</div>
+            <div class="faq-a">A Japanese converter tool changes text from one Japanese writing system into another — for example, kanji into hiragana readings, or hiragana into katakana. Every converter on this page runs instantly in your browser and shows romaji so you can pronounce the result.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">Which Japanese converter should I use?</div>
+            <div class="faq-a" aria-hidden="true">Use the Kanji to Hiragana Converter when you need the reading of kanji text, and the Hiragana to Katakana Converter when you need to switch between the two kana scripts. To write an English name in Japanese, use the Japanese Name Translator on our homepage.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">What is the difference between kanji, hiragana, and katakana?</div>
+            <div class="faq-a" aria-hidden="true">Kanji are logographic characters borrowed from Chinese that carry meaning, while hiragana and katakana are phonetic kana syllabaries. Hiragana is used for native Japanese words and grammar, and katakana is used for loanwords, foreign names, and emphasis.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">Are these Japanese converter tools free?</div>
+            <div class="faq-a" aria-hidden="true">Yes. Every converter is completely free, with no account, no usage limits, and no ads.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">Is my text sent to a server?</div>
+            <div class="faq-a" aria-hidden="true">No. Conversions run client-side in your browser, so the text you enter never leaves your device.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">Can I convert my English name to Japanese?</div>
+            <div class="faq-a" aria-hidden="true">Yes. The Japanese Name Translator on our homepage converts English names into katakana, hiragana, kanji (ateji), and romaji with pronunciation guides and cultural context.</div>
+        </div>
+    </section>
+
+    <!-- RELATED -->
+    <section class="related-section">
+        <h2>More Japanese Language Tools</h2>
+        <div class="related-grid">
+            <a href="/" class="related-card">
+                <div class="related-icon" aria-hidden="true">名</div>
+                <h3>Japanese Name Translator</h3>
+                <p>Convert your English name to Japanese Katakana, Hiragana, and Kanji with pronunciation guides and cultural context.</p>
+            </a>
+            <a href="/about.html" class="related-card">
+                <div class="related-icon" aria-hidden="true">人</div>
+                <h3>About Daniel Sato</h3>
+                <p>Learn about the Japanese linguistics expert behind My Japanese Name Translator and our commitment to accuracy.</p>
             </a>
         </div>
     </section>
