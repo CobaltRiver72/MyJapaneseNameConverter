@@ -589,11 +589,11 @@ import '../styles/kanji.css';
     <!-- Patch: kuromoji's bundled path.join strips the protocol double-slash
          from URLs (https:// becomes https:/). This permanent XHR patch fixes
          mangled URLs before they are sent. Must run BEFORE library scripts load. -->
-    <script is:inline src="/scripts/kanji-xhr-patch.js"></script>
+    <script is:inline src="/scripts/kanji-xhr-patch.js?v=20260701"></script>
 
     <!-- Kuroshiro Libraries -->
     <script is:inline src="https://cdn.jsdelivr.net/npm/kuroshiro@1.2.0/dist/kuroshiro.min.js"></script>
     <script is:inline src="https://cdn.jsdelivr.net/npm/kuroshiro-analyzer-kuromoji@1.1.0/dist/kuroshiro-analyzer-kuromoji.min.js"></script>
 
-    <script is:inline src="/scripts/kanji.js"></script>
+    <script is:inline src="/scripts/kanji.js?v=20260701"></script>
 </BaseLayout>
