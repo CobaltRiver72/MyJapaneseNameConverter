@@ -1,6 +1,8 @@
 node_modules/
 dist/
+deploy/
 .astro/
 .DS_Store
 *.log
 test-results/
+hostinger-deploy.zip

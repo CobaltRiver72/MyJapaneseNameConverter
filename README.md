@@ -48,9 +48,11 @@ Run `npm run preview` and open each page in a browser. Check:
 ### Deploy to Hostinger
 
 1. **Backup current `public_html/`** via Hostinger File Manager (download as a zip). This is your one-click rollback path.
-2. Run locally: `npm run build && npm run verify && npm run preview` — all must pass.
-3. Upload the contents of `dist/` to `public_html/` via File Manager drag-and-drop or FTP.
+2. Run locally: `npm run stage` — runs the full check gate (tests + build + verify) and refreshes the `deploy/` staging folder.
+3. Upload the **contents** of `deploy/` to `public_html/` via FileZilla (enable Server → "Force showing hidden files" so `.htaccess` uploads) or File Manager drag-and-drop.
 4. Spot-check the live site in an incognito window. View source on each page to confirm `<title>`, canonical, OG tags, and JSON-LD schema are intact.
+
+**Never** upload the repo source (`src/`, `docs/`, `.git`, …) to the server, and don't connect Hostinger's Git deploy — it clones raw source into `public_html/` and serves a 403.
 
 ### Project structure
 
@@ -64,7 +66,9 @@ src/
 public/                # Static assets served as-is (favicon, logo, robots.txt, sitemap.xml)
 current/               # Pre-migration HTML snapshots (gitignored, used by verify.mjs)
 scripts/verify.mjs     # Layer 1 SEO verification script
-dist/                  # Build output (gitignored). Upload to Hostinger public_html/.
+dist/                  # Build output (gitignored) — never upload this directly
+deploy/                # Verified staging copy of dist/ (gitignored). Upload its
+                       # CONTENTS to Hostinger public_html/ (refresh: npm run stage)
 ```
 
 ---
