@@ -1,6 +1,6 @@
 ---
 interface Props {
-  currentPage?: 'home' | 'about' | 'contact' | 'kanji' | 'kana' | 'none';
+  currentPage?: 'home' | 'about' | 'contact' | 'converter' | 'none';
   nameTranslatorHref: string;
 }
 
@@ -17,8 +17,7 @@ const { currentPage = 'none', nameTranslatorHref } = Astro.props;
         <nav class="header-nav" role="navigation" aria-label="Main navigation">
             <a href="/" aria-current={currentPage === 'home' ? 'page' : undefined}>Home</a>
             <a href={nameTranslatorHref}>Name Translator</a>
-            <a href="/kanji-to-hiragana-converter.html" aria-current={currentPage === 'kanji' ? 'page' : undefined}>Kanji Converter</a>
-            <a href="/converter/hiragana-to-katakana" aria-current={currentPage === 'kana' ? 'page' : undefined}>Kana Converter</a>
+            <a href="/converter" aria-current={currentPage === 'converter' ? 'page' : undefined}>Converter Tools</a>
             <a href="/about.html" aria-current={currentPage === 'about' ? 'page' : undefined}>About</a>
             <a href="/contact.html" aria-current={currentPage === 'contact' ? 'page' : undefined}>Contact</a>
         </nav>
