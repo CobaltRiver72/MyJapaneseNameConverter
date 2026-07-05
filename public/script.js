@@ -239,14 +239,15 @@ function convertName() {
     const input = document.getElementById('nameInput').value.trim();
     if (!input) return;
 
-    // Only push a new history entry when the URL would actually change.
-    // Without this guard, Back-button-triggered conversions (via popstate
-    // → convertName) would re-push the same hash and trap the user.
-    const desiredHash = `#?q=${encodeURIComponent(input)}`;
-    if (window.location.hash !== desiredHash) {
-        history.pushState(null, '', desiredHash);
+    // Never write #?q= hashes to the URL — they surface in GSC/GA as fake
+    // page variants of the homepage. If the visitor arrived via a legacy
+    // #?q= share link, clear the stale hash without adding a history entry.
+    if (window.location.hash.startsWith('#?q=')) {
+        history.replaceState(null, '', window.location.pathname + window.location.search);
     }
-    gtag('event', 'page_view', { page_title: `Japanese Name for ${input}`, page_location: window.location.href });
+    // Track conversions as a custom event, not a page_view (page_views here
+    // inflated homepage counts and split them across hash pseudo-pages).
+    gtag('event', 'name_converted', { name_input: input });
 
     const nameLower = input.toLowerCase();
     let katakana, romaji, hiragana, kanji;
@@ -401,8 +402,8 @@ function clearName() {
     document.getElementById('kanjiRomaji').textContent = 'Ema (ateji)';
     document.getElementById('romajiOutput').textContent = 'Ema';
     document.getElementById('resultsArea').classList.add('is-placeholder');
-    // Reset URL hash without triggering popstate
-    history.pushState(null, '', window.location.pathname + window.location.search);
+    // Reset any legacy URL hash without adding a history entry
+    history.replaceState(null, '', window.location.pathname + window.location.search);
 }
 
 // FAQ toggle
