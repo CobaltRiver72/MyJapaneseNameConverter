@@ -31,6 +31,7 @@ Rules for legacy pages — Google must never see a change:
 
 Current new pages (all extensionless):
 - `https://myjapanesenametranslator.com/converter` — silo hub ("Japanese Converter Tools")
+- `https://myjapanesenametranslator.com/converter/kanji-to-katakana` — silo spoke
 - `https://myjapanesenametranslator.com/converter/hiragana-to-katakana` — silo spoke
 
 Rules for new pages:

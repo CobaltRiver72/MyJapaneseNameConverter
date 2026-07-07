@@ -2,7 +2,7 @@
 import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 
-const PAGES = ['index.html', 'about.html', 'privacy.html', 'terms.html', 'contact.html', 'kanji-to-hiragana-converter.html', 'converter.html', 'converter/hiragana-to-katakana.html'];
+const PAGES = ['index.html', 'about.html', 'privacy.html', 'terms.html', 'contact.html', 'kanji-to-hiragana-converter.html', 'converter.html', 'converter/kanji-to-katakana.html', 'converter/hiragana-to-katakana.html'];
 
 function normalize(html) {
   return html
@@ -52,13 +52,14 @@ const ALL_PAGES = [...PAGES, '404.html'];
 // (200, no redirects, .html self-canonicals). All NEW pages are extensionless.
 const LEGACY_HTML_ROUTES = ['about', 'contact', 'privacy', 'terms', 'kanji-to-hiragana-converter'];
 // Extensionless routes include the /converter silo hub and its spoke pages.
-const EXTENSIONLESS_ROUTES = ['converter', 'converter/hiragana-to-katakana'];
+const EXTENSIONLESS_ROUTES = ['converter', 'converter/kanji-to-katakana', 'converter/hiragana-to-katakana'];
 const PUBLIC_URLS = [
   'https://myjapanesenametranslator.com/',
   'https://myjapanesenametranslator.com/about.html',
   'https://myjapanesenametranslator.com/contact.html',
   'https://myjapanesenametranslator.com/kanji-to-hiragana-converter.html',
   'https://myjapanesenametranslator.com/converter',
+  'https://myjapanesenametranslator.com/converter/kanji-to-katakana',
   'https://myjapanesenametranslator.com/converter/hiragana-to-katakana',
   'https://myjapanesenametranslator.com/privacy.html',
   'https://myjapanesenametranslator.com/terms.html',
@@ -72,6 +73,7 @@ const CANONICALS = {
   'terms.html': 'https://myjapanesenametranslator.com/terms.html',
   'kanji-to-hiragana-converter.html': 'https://myjapanesenametranslator.com/kanji-to-hiragana-converter.html',
   'converter.html': 'https://myjapanesenametranslator.com/converter',
+  'converter/kanji-to-katakana.html': 'https://myjapanesenametranslator.com/converter/kanji-to-katakana',
   'converter/hiragana-to-katakana.html': 'https://myjapanesenametranslator.com/converter/hiragana-to-katakana',
 };
 // page -> the browser JS file that must define toggleMobileNav
@@ -84,6 +86,7 @@ const NAV_SCRIPT = {
   '404.html': 'dist/scripts/site.js',
   'kanji-to-hiragana-converter.html': 'dist/scripts/kanji.js',
   'converter.html': 'dist/scripts/site.js',
+  'converter/kanji-to-katakana.html': 'dist/scripts/kanji-katakana.js',
   'converter/hiragana-to-katakana.html': 'dist/scripts/hiragana-katakana.js',
 };
 const CSS_BUNDLES = ['dist/styles.css'];
