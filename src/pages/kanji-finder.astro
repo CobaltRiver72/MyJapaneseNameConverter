@@ -1,0 +1,538 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { TOOL_CSP } from '../lib/csp.js';
+import '../styles/kanji.css';
+---
+<BaseLayout
+  title="Kanji Finder — Draw Kanji, Radical Search & Lookup | Free"
+  description="Free kanji finder. Draw a kanji to search it, find kanji by radical, or look up kanji by reading and meaning — with stroke order, JLPT level, and example words."
+  canonical="https://myjapanesenametranslator.com/kanji-finder"
+  csp={TOOL_CSP}
+  ogTitle="Kanji Finder — Draw Kanji, Radical Search & Lookup | Free"
+  ogDescription="Draw a kanji to identify it instantly, search by radical, or look up kanji by reading or meaning. Stroke order, readings, JLPT level, and example words included."
+  ogUrl="https://myjapanesenametranslator.com/kanji-finder"
+  twitterTitle="Kanji Finder — Draw Kanji, Radical Search & Lookup | Free"
+  twitterDescription="Draw a kanji to identify it instantly, search by radical, or look up kanji by reading or meaning — free and private."
+>
+  <Fragment slot="schema" set:html={`<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://myjapanesenametranslator.com/#danielsato",
+          "name": "Daniel Sato",
+          "givenName": "Daniel",
+          "familyName": "Sato",
+          "jobTitle": "Japanese Linguistics Expert & Name Translation Specialist",
+          "description": "Developer and Japanese linguist specializing in English to Japanese name conversion using culturally accurate kanji, katakana, and hiragana transliteration methods.",
+          "knowsLanguage": ["en", "ja"],
+          "knowsAbout": [
+            {
+              "@type": "Thing",
+              "name": "Japanese language",
+              "sameAs": "https://en.wikipedia.org/wiki/Japanese_language"
+            },
+            {
+              "@type": "Thing",
+              "name": "Kanji",
+              "sameAs": "https://en.wikipedia.org/wiki/Kanji"
+            },
+            {
+              "@type": "Thing",
+              "name": "Radical (Chinese characters)",
+              "sameAs": "https://en.wikipedia.org/wiki/Radical_(Chinese_characters)"
+            },
+            {
+              "@type": "Thing",
+              "name": "Japanese writing system",
+              "sameAs": "https://en.wikipedia.org/wiki/Japanese_writing_system"
+            }
+          ],
+          "sameAs": [
+            "https://www.linkedin.com/in/daniel-sato-japanese/",
+            "https://github.com/DanielJapanese",
+            "https://www.pinterest.com/Danielsatojapanese/",
+            "https://bsky.app/profile/danielsatojapanese.bsky.social"
+          ],
+          "worksFor": {
+            "@id": "https://myjapanesenametranslator.com/#organization"
+          }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://myjapanesenametranslator.com/#organization",
+          "name": "My Japanese Name Translator",
+          "alternateName": ["MJNT", "Japanese Name Translator"],
+          "url": "https://myjapanesenametranslator.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://myjapanesenametranslator.com/My-Japanese-Name-Translator-Logo.png",
+            "width": 512,
+            "height": 512
+          },
+          "image": "https://myjapanesenametranslator.com/My-Japanese-Name-Translator-Logo.png",
+          "founder": {
+            "@id": "https://myjapanesenametranslator.com/#danielsato"
+          },
+          "foundingDate": "2026",
+          "areaServed": "Worldwide",
+          "slogan": "Translate Your Name in Japanese",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "contact@myjapanesenametranslator.com",
+            "contactType": "customer support",
+            "availableLanguage": ["English", "Japanese"],
+            "areaServed": "Worldwide"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Stockton",
+            "addressRegion": "CA",
+            "addressCountry": "US"
+          },
+          "sameAs": [
+            "https://github.com/DanielJapanese",
+            "https://www.pinterest.com/Danielsatojapanese/",
+            "https://www.linkedin.com/in/daniel-sato-japanese/",
+            "https://bsky.app/profile/danielsatojapanese.bsky.social"
+          ],
+          "knowsAbout": [
+            {
+              "@type": "Thing",
+              "name": "Japanese writing system",
+              "sameAs": "https://en.wikipedia.org/wiki/Japanese_writing_system"
+            },
+            {
+              "@type": "Thing",
+              "name": "Kanji",
+              "sameAs": "https://en.wikipedia.org/wiki/Kanji"
+            }
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://myjapanesenametranslator.com/#website",
+          "url": "https://myjapanesenametranslator.com/",
+          "name": "My Japanese Name Translator",
+          "alternateName": "Japanese Name Converter",
+          "description": "Free Japanese name converter tool. Instantly convert your English name to authentic Katakana (カタカナ), Hiragana (ひらがな), and Kanji (漢字) with pronunciation guides and cultural meanings.",
+          "inLanguage": "en",
+          "publisher": {
+            "@id": "https://myjapanesenametranslator.com/#organization"
+          },
+          "creator": {
+            "@id": "https://myjapanesenametranslator.com/#danielsato"
+          }
+        },
+        {
+          "@type": "WebApplication",
+          "@id": "https://myjapanesenametranslator.com/kanji-finder#application",
+          "name": "Kanji Finder",
+          "description": "Free online kanji finder: draw a kanji to identify it with handwriting recognition, find kanji by radical, or look up kanji by reading and meaning. Shows stroke order, readings, JLPT level, and example words.",
+          "url": "https://myjapanesenametranslator.com/kanji-finder",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "Web Browser",
+          "browserRequirements": "Requires JavaScript",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "featureList": [
+            "Handwritten kanji recognition — draw kanji with mouse, finger, or stylus",
+            "Live candidates after every stroke",
+            "Find kanji by radical with smart radical filtering",
+            "Kanji lookup by English meaning, romaji, or kana reading",
+            "Animated stroke-order diagrams",
+            "On'yomi and kun'yomi readings with English meanings",
+            "JLPT level, school grade, and frequency data",
+            "Example words for every kanji",
+            "Recently-found kanji history and one-click copy",
+            "100% client-side — private and fast"
+          ],
+          "author": {
+            "@id": "https://myjapanesenametranslator.com/#danielsato"
+          },
+          "provider": {
+            "@id": "https://myjapanesenametranslator.com/#organization"
+          },
+          "isPartOf": {
+            "@id": "https://myjapanesenametranslator.com/#website"
+          },
+          "about": [
+            {
+              "@type": "Thing",
+              "name": "Kanji",
+              "sameAs": "https://en.wikipedia.org/wiki/Kanji"
+            },
+            {
+              "@type": "Thing",
+              "name": "Radical (Chinese characters)",
+              "sameAs": "https://en.wikipedia.org/wiki/Radical_(Chinese_characters)"
+            },
+            {
+              "@type": "Thing",
+              "name": "Handwriting recognition",
+              "sameAs": "https://en.wikipedia.org/wiki/Handwriting_recognition"
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://myjapanesenametranslator.com/kanji-finder#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://myjapanesenametranslator.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Kanji Finder",
+              "item": "https://myjapanesenametranslator.com/kanji-finder"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://myjapanesenametranslator.com/kanji-finder#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How do I find a kanji by drawing it?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Draw the kanji in the box using your mouse, finger, or stylus. Candidates appear after every stroke and get more accurate as you add strokes. Click a candidate to see its readings, meanings, stroke order, and example words."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do I need to use the correct stroke order?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. The recognizer is stroke-order tolerant, so a roughly correct shape with approximately the right number of strokes is usually enough. Getting the stroke count close is more important than the order you draw them in."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does finding kanji by radical work?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Every kanji is built from smaller components called radicals. In the Radicals tab, tap the parts you can see in the character — the list instantly narrows to kanji containing all of them, and components that can no longer co-occur are greyed out. You can also filter by total stroke count."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I find a kanji from a picture or photo?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The most reliable way is to draw what you see in the picture into the drawing box — handwriting recognition then identifies it. This works even for stylized fonts, calligraphy, and tattoos, where automatic photo OCR often fails."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is this better than drawing kanji in Google Translate?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Google Translate's handwriting input identifies a character but tells you almost nothing about it. This kanji finder shows readings, meanings, JLPT level, stroke-order animation, radicals, and example words for every result — and it runs entirely in your browser without sending your drawing to a server."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What information does the kanji finder show for each character?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Each kanji card shows on'yomi readings in katakana, kun'yomi readings in hiragana, English meanings, stroke count, JLPT level, school grade, usage frequency, its radicals, an animated stroke-order diagram, and common example words with readings and translations."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is the kanji finder free and private?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. It is completely free with no registration, and everything — handwriting recognition included — runs locally in your browser. Your drawings and searches are never uploaded to a server."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "HowTo",
+          "@id": "https://myjapanesenametranslator.com/kanji-finder#howto",
+          "name": "How to Look Up a Kanji by Drawing",
+          "description": "Step-by-step guide to identifying an unknown kanji with handwriting recognition.",
+          "step": [
+            {
+              "@type": "HowToStep",
+              "position": 1,
+              "name": "Draw the kanji",
+              "text": "Sketch the character in the drawing box with your mouse, finger, or stylus. Stroke order does not need to be perfect."
+            },
+            {
+              "@type": "HowToStep",
+              "position": 2,
+              "name": "Watch the candidates",
+              "text": "The best matches appear instantly after each stroke and refine as you keep drawing. Use Undo if a stroke goes wrong."
+            },
+            {
+              "@type": "HowToStep",
+              "position": 3,
+              "name": "Pick your kanji",
+              "text": "Click the correct candidate to open its card: readings, meanings, JLPT level, radicals, stroke-order animation, and example words."
+            },
+            {
+              "@type": "HowToStep",
+              "position": 4,
+              "name": "Copy or convert",
+              "text": "Found kanji collect in the output tray — copy them, or send them to the kanji to hiragana / katakana converters for full sentences."
+            }
+          ]
+        }
+      ]
+    }
+    </script>`} />
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <Header currentPage="none" nameTranslatorHref="/" />
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-kanji k1" aria-hidden="true">探</div>
+        <div class="hero-kanji k2" aria-hidden="true">字</div>
+        <div class="hero-kanji k3" aria-hidden="true">書</div>
+        <div class="hero-kanji k4" aria-hidden="true">部</div>
+        <div class="hero-content">
+            <div class="hero-badge animate-in delay-1">Free Kanji Search Tool</div>
+            <h1 class="animate-in delay-2">Kanji Finder — Draw, Search &amp; Look Up Kanji</h1>
+            <p class="animate-in delay-3">Met a kanji you can't read? Draw it and get instant matches, pick out its radicals, or search by reading and meaning. Every result comes with readings, meanings, JLPT level, animated stroke order, and example words — free, and everything runs privately in your browser.</p>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main id="main-content" role="main">
+
+    <!-- BREADCRUMB -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a><span>›</span><strong>Kanji Finder</strong>
+    </nav>
+
+    <!-- FINDER -->
+    <section class="converter-section animate-in delay-4" id="finder">
+        <div class="converter-card">
+            <div class="converter-inner">
+                <div class="kf-tabs" role="tablist" aria-label="Kanji lookup method">
+                    <button type="button" class="kf-tab active" role="tab" data-tab="draw" aria-selected="true">✏️ Draw</button>
+                    <button type="button" class="kf-tab" role="tab" data-tab="radicals" aria-selected="false">部 Radicals</button>
+                    <button type="button" class="kf-tab" role="tab" data-tab="search" aria-selected="false">🔎 Search</button>
+                </div>
+
+                <!-- DRAW PANEL -->
+                <div class="kf-panel" data-panel="draw">
+                    <div class="kf-canvas-wrap">
+                        <div>
+                            <canvas id="kfCanvas" width="280" height="280" data-candidate-list="" aria-label="Kanji drawing area"></canvas>
+                            <div class="kf-canvas-tools">
+                                <button type="button" class="kf-btn" id="kfUndoBtn">↩ Undo stroke</button>
+                                <button type="button" class="kf-btn" id="kfClearBtn">Clear</button>
+                                <span class="kf-strokes"><span id="kfStrokeCount">0</span> strokes</span>
+                            </div>
+                        </div>
+                        <div class="kf-canvas-side">
+                            <div class="input-meta" style="margin-bottom:0.4rem;">
+                                <div class="engine-status">
+                                    <div class="status-dot loading" id="kfStatusDot"></div>
+                                    <span id="kfStatusText" style="font-size:0.78rem; color:var(--slate);">Loading recognizer…</span>
+                                </div>
+                            </div>
+                            <div class="kf-cands" id="kfCandidates" aria-live="polite">
+                                <span class="kf-hint">Candidates appear here after your first stroke.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RADICALS PANEL -->
+                <div class="kf-panel" data-panel="radicals" hidden>
+                    <div class="kf-rad-grid" id="kfRadGrid" aria-label="Radical picker"></div>
+                    <div class="kf-rad-tools">
+                        <label for="kfStrokeSel" style="font-size:0.8rem; color:var(--slate);">Total strokes:</label>
+                        <select id="kfStrokeSel">
+                            <option value="0">Any</option>
+                            <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+                            <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+                            <option>11</option><option>12</option><option>13</option><option>14</option><option>15</option>
+                            <option>16</option><option>17</option><option>18</option><option>19</option><option>20</option>
+                        </select>
+                        <button type="button" class="kf-btn" id="kfRadReset">Reset</button>
+                    </div>
+                    <div class="kf-results" id="kfRadResults" aria-live="polite">
+                        <span class="kf-hint">Select one or more radicals above — matching kanji appear here.</span>
+                    </div>
+                </div>
+
+                <!-- SEARCH PANEL -->
+                <div class="kf-panel" data-panel="search" hidden>
+                    <input type="text" class="kf-search-input" id="kfSearchInput" placeholder='Try "water", "mizu", or みず…' autocomplete="off" aria-label="Search kanji by meaning or reading">
+                    <div class="kf-results" id="kfSearchResults" aria-live="polite">
+                        <span class="kf-hint">Type an English meaning ("water"), a romaji reading ("mizu"), or kana ("みず").</span>
+                    </div>
+                </div>
+
+                <!-- OUTPUT TRAY -->
+                <div class="kf-output-bar" id="kfOutputBar">
+                    <input id="kfOutput" placeholder="Found kanji collect here…" aria-label="Found kanji">
+                    <button type="button" class="kf-btn" id="kfCopyOut">Copy</button>
+                    <button type="button" class="kf-btn" id="kfClearOut">Clear</button>
+                </div>
+                <div class="kf-history" id="kfHistory" hidden></div>
+
+                <!-- DETAIL CARD -->
+                <div class="kf-detail" id="kfDetail" hidden></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-section" id="how-it-works">
+        <div class="how-card">
+            <h2>How the Handwritten Kanji Search Works</h2>
+            <p>When you draw in the box, the finder compares your strokes against reference patterns for more than <strong>2,200 kanji</strong> — every jōyō ("regular use") character and the most common beyond them. Matching happens in two passes: a coarse pass filters by stroke count and overall shape, then a fine pass scores stroke directions and positions to rank the best candidates. Because scoring is <strong>stroke-order tolerant</strong>, you don't need textbook-perfect calligraphy — a recognizable shape with roughly the right number of strokes is enough.</p>
+            <p>Unlike older handwritten kanji lookup sites that send every stroke to a server for processing, recognition here runs <strong>entirely in your browser</strong>. That makes it faster after the first load, it keeps working on a flaky connection, and your drawings never leave your device.</p>
+
+            <h2 style="margin-top:1.5rem;">Find Kanji by Radical</h2>
+            <p>Every kanji is assembled from smaller components — <strong>radicals</strong> (部首, bushu). If you can spot even one or two parts of an unknown character, the Radicals tab will find it: tap the components you recognize and the finder intersects the lists, narrowing thousands of kanji down to a handful in a couple of taps. Components that can no longer appear together with your selection are automatically greyed out, and a stroke-count filter narrows things further. The decomposition data covers <strong>6,000+ kanji</strong> across 253 radicals.</p>
+
+            <h2 style="margin-top:1.5rem;">Kanji Lookup by Reading or Meaning</h2>
+            <p>Already know how a kanji is pronounced, or what it means? The Search tab looks up characters by <strong>English meaning</strong> ("water"), <strong>romaji</strong> ("mizu"), or <strong>kana</strong> (みず) — and you can paste a kanji directly to jump straight to its card. Results are ranked by how common each character is, so the kanji you're most likely looking for appears first.</p>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features-section">
+        <h2>Why This Kanji Finder</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">✏️</div>
+                <h3>Draw to Search</h3>
+                <p>Handwriting recognition for 2,200+ kanji with live candidates after every stroke — mouse, finger, or stylus.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <span style="font-family:'Noto Sans JP',sans-serif; font-size:0.9rem;">部</span>
+                </div>
+                <h3>Radical Search</h3>
+                <p>Pick the parts you can see and narrow 6,000+ kanji to a handful — impossible combinations grey out automatically.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔎</div>
+                <h3>Meaning &amp; Reading Lookup</h3>
+                <p>Search by English, romaji, or kana. Frequency-ranked results put the likeliest kanji first.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🖌️</div>
+                <h3>Stroke-Order Animation</h3>
+                <p>Watch any kanji draw itself stroke by stroke — learn to write it correctly, not just recognize it.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🈯</div>
+                <h3>Full Kanji Cards</h3>
+                <p>On'yomi, kun'yomi, meanings, JLPT level, school grade, frequency rank, radicals, and example words.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📚</div>
+                <h3>Example Words</h3>
+                <p>Real vocabulary using each kanji, with readings and translations — learn characters in context.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Private by Design</h3>
+                <p>Recognition runs locally — your drawings are never uploaded. Older lookup sites post every stroke to a server.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🆓</div>
+                <h3>Free, No Limits</h3>
+                <p>No registration, no ads, no caps. Your found kanji collect in a tray for easy copying.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section" id="faq">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item open">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="true" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">How do I find a kanji by drawing it?</div>
+            <div class="faq-a">Draw the kanji in the box using your mouse, finger, or stylus. Candidates appear after every stroke and get more accurate as you add strokes. Click a candidate to see its readings, meanings, stroke order, and example words.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">Do I need to use the correct stroke order?</div>
+            <div class="faq-a" aria-hidden="true">No. The recognizer is stroke-order tolerant, so a roughly correct shape with approximately the right number of strokes is usually enough. Getting the stroke count close matters more than the order you draw them in — though the stroke-order animation on each kanji card can teach you the proper order too.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">How does finding kanji by radical work?</div>
+            <div class="faq-a" aria-hidden="true">Every kanji is built from smaller components called radicals. In the Radicals tab, tap the parts you can see in the character — the list instantly narrows to kanji containing all of them, and components that can no longer co-occur are greyed out. You can also filter by total stroke count.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">Can I find a kanji from a picture or photo?</div>
+            <div class="faq-a" aria-hidden="true">The most reliable way is to draw what you see in the picture into the drawing box — handwriting recognition then identifies it. This works even for stylized fonts, calligraphy, and tattoos, where automatic photo OCR often fails on decorative characters.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">Is this better than drawing kanji in Google Translate?</div>
+            <div class="faq-a" aria-hidden="true">Google Translate's handwriting input identifies a character but tells you almost nothing about it. This kanji finder shows readings, meanings, JLPT level, stroke-order animation, radicals, and example words for every result — and it runs entirely in your browser without sending your drawing to a server. If you need a whole sentence translated afterwards, our kanji converters take it from there.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">What information does the kanji finder show for each character?</div>
+            <div class="faq-a" aria-hidden="true">Each kanji card shows on'yomi readings in katakana, kun'yomi readings in hiragana, English meanings, stroke count, JLPT level, school grade, usage frequency, its radicals, an animated stroke-order diagram, and common example words with readings and translations.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false" onclick="toggleFaq(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleFaq(this)}">Is the kanji finder free and private?</div>
+            <div class="faq-a" aria-hidden="true">Yes. It is completely free with no registration, and everything — handwriting recognition included — runs locally in your browser. Your drawings and searches are never uploaded to a server.</div>
+        </div>
+    </section>
+
+    <!-- RELATED TOOLS -->
+    <section class="related-section">
+        <h2>More Japanese Language Tools</h2>
+        <div class="related-grid">
+            <a href="/kanji-to-hiragana-converter.html" class="related-card">
+                <div class="related-icon" aria-hidden="true">読</div>
+                <h3>Kanji to Hiragana Converter</h3>
+                <p>Convert Japanese kanji text into hiragana readings with furigana, romaji, glosses, and a word breakdown table.</p>
+            </a>
+            <a href="/converter/kanji-to-katakana" class="related-card">
+                <div class="related-icon" aria-hidden="true">カ</div>
+                <h3>Kanji to Katakana Converter</h3>
+                <p>Turn kanji text into katakana readings for フリガナ form fields, name readings, and on'yomi study.</p>
+            </a>
+            <a href="/converter/hiragana-to-katakana" class="related-card">
+                <div class="related-icon" aria-hidden="true">ア</div>
+                <h3>Hiragana to Katakana Converter</h3>
+                <p>Convert Japanese hiragana into katakana instantly with reverse conversion, copy, and character tables.</p>
+            </a>
+            <a href="/converter" class="related-card">
+                <div class="related-icon" aria-hidden="true">変</div>
+                <h3>Japanese Converter Tools</h3>
+                <p>Browse every free Japanese converter in one place — switch text between kanji, hiragana, katakana, and romaji.</p>
+            </a>
+            <a href="/" class="related-card">
+                <div class="related-icon" aria-hidden="true">名</div>
+                <h3>Japanese Name Translator</h3>
+                <p>Convert your English name to Japanese Katakana, Hiragana, and Kanji with pronunciation guides and cultural context.</p>
+            </a>
+        </div>
+        <p style="font-size:0.72rem; color:var(--slate); text-align:center; margin-top:1.5rem;">Kanji data: <a href="https://www.edrdg.org/" rel="noopener" style="color:var(--slate);">EDRDG</a> KANJIDIC2 &amp; RADKFILE (CC BY-SA 4.0) · Stroke-order diagrams: <a href="https://kanjivg.tagaini.net/" rel="noopener" style="color:var(--slate);">KanjiVG</a> (CC BY-SA 3.0) · Recognition: Kanji Canvas (MIT).</p>
+    </section>
+
+    </main>
+
+    <Footer nameTranslatorHref="/" />
+
+    <!-- COPIED TOAST -->
+    <div class="copied-toast" id="copiedToast" role="status" aria-live="polite">&#10003; Copied to clipboard</div>
+
+    <script is:inline src="/scripts/kanji-finder.js?v=20260707"></script>
+</BaseLayout>

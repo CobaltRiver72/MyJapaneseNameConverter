@@ -1430,3 +1430,222 @@
             .examples-table table { min-width: 500px; }
             .related-grid { grid-template-columns: 1fr; }
         }
+
+        /* === KANJI FINDER (/kanji-finder) === */
+        .kf-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.25rem;
+            flex-wrap: wrap;
+        }
+        .kf-tab {
+            border: 1.5px solid var(--cream);
+            background: var(--white);
+            border-radius: 999px;
+            padding: 0.5rem 1.1rem;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--slate);
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        .kf-tab.active {
+            background: var(--ink);
+            border-color: var(--ink);
+            color: var(--paper);
+        }
+        .kf-canvas-wrap {
+            display: flex;
+            gap: 1.25rem;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        #kfCanvas {
+            width: 280px;
+            height: 280px;
+            max-width: 100%;
+            background:
+                linear-gradient(to right, transparent 49.6%, rgba(26,26,46,0.06) 49.6%, rgba(26,26,46,0.06) 50.4%, transparent 50.4%),
+                linear-gradient(to bottom, transparent 49.6%, rgba(26,26,46,0.06) 49.6%, rgba(26,26,46,0.06) 50.4%, transparent 50.4%),
+                var(--white);
+            border: 2px dashed var(--cream);
+            border-radius: 14px;
+            cursor: crosshair;
+            touch-action: none;
+        }
+        #kfCanvas.kf-ready { border-style: solid; }
+        .kf-canvas-side { flex: 1; min-width: 220px; }
+        .kf-canvas-tools {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            margin-top: 0.6rem;
+        }
+        .kf-btn {
+            border: 1.5px solid var(--cream);
+            background: var(--white);
+            border-radius: 10px;
+            padding: 0.45rem 0.9rem;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--ink);
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.15s;
+        }
+        .kf-btn:hover { border-color: var(--vermillion); color: var(--vermillion); }
+        .kf-strokes { font-size: 0.78rem; color: var(--slate); margin-left: auto; }
+        .kf-cands, .kf-results {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 0.75rem;
+            min-height: 3rem;
+            align-content: flex-start;
+        }
+        .kf-cand {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 1.5rem;
+            line-height: 1;
+            padding: 0.45rem 0.55rem;
+            border: 1.5px solid var(--cream);
+            border-radius: 10px;
+            background: var(--white);
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        .kf-cand:hover { border-color: var(--vermillion); color: var(--vermillion); transform: translateY(-1px); }
+        .kf-cand-mini { font-size: 1.1rem; padding: 0.3rem 0.45rem; }
+        .kf-hint { font-size: 0.8rem; color: var(--slate); align-self: center; }
+        .kf-rad-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem;
+            max-height: 260px;
+            overflow-y: auto;
+            border: 1.5px solid var(--cream);
+            border-radius: 12px;
+            padding: 0.6rem;
+            background: var(--white);
+        }
+        .kf-rad-group {
+            width: 100%;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--vermillion);
+            margin: 0.35rem 0 0.1rem;
+        }
+        .kf-rad {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 1.05rem;
+            line-height: 1;
+            padding: 0.3rem 0.4rem;
+            border: 1px solid var(--cream);
+            border-radius: 8px;
+            background: var(--white);
+            cursor: pointer;
+        }
+        .kf-rad.active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+        .kf-rad:disabled { opacity: 0.25; cursor: default; }
+        .kf-rad-mini { font-size: 0.9rem; }
+        .kf-rad-tools {
+            display: flex;
+            gap: 0.6rem;
+            align-items: center;
+            margin: 0.75rem 0;
+            flex-wrap: wrap;
+        }
+        .kf-rad-tools select {
+            border: 1.5px solid var(--cream);
+            border-radius: 8px;
+            padding: 0.35rem 0.5rem;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.8rem;
+            color: var(--ink);
+            background: var(--white);
+        }
+        .kf-search-input {
+            width: 100%;
+            border: 2px solid var(--cream);
+            border-radius: 12px;
+            padding: 0.8rem 1rem;
+            font-family: 'DM Sans', 'Noto Sans JP', sans-serif;
+            font-size: 1rem;
+            color: var(--ink);
+            background: var(--white);
+        }
+        .kf-search-input:focus { outline: none; border-color: var(--vermillion); }
+        .kf-output-bar {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            margin-top: 1.25rem;
+            padding: 0.6rem;
+            border: 1.5px solid var(--cream);
+            border-radius: 12px;
+            background: var(--paper);
+        }
+        .kf-output-bar input {
+            flex: 1;
+            border: none;
+            background: none;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 1.3rem;
+            color: var(--ink);
+            min-width: 0;
+        }
+        .kf-output-bar input:focus { outline: none; }
+        .kf-history {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            align-items: center;
+            margin-top: 0.75rem;
+        }
+        .kf-detail {
+            margin-top: 1.5rem;
+            border: 1.5px solid var(--cream);
+            border-radius: 14px;
+            background: var(--white);
+            padding: 1.25rem;
+        }
+        .kf-detail-head { display: flex; gap: 1.25rem; align-items: flex-start; flex-wrap: wrap; }
+        .kf-detail-char {
+            width: 140px;
+            height: 140px;
+            flex: 0 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--cream);
+            border-radius: 12px;
+            background: var(--paper);
+        }
+        .kf-glyph { font-family: 'Noto Serif JP', serif; font-size: 5.5rem; line-height: 1; color: var(--ink); }
+        .kf-vg { width: 120px; height: 120px; }
+        .kf-detail-main { flex: 1; min-width: 220px; }
+        .kf-detail-meanings { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 1.05rem; color: var(--ink); margin-bottom: 0.6rem; }
+        .kf-readrow { display: flex; flex-wrap: wrap; gap: 0.35rem; align-items: center; margin-bottom: 0.45rem; }
+        .kf-readlbl { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--slate); margin-right: 0.25rem; }
+        .kf-read { font-family: 'Noto Sans JP', sans-serif; font-size: 0.9rem; padding: 0.15rem 0.55rem; border-radius: 999px; background: var(--paper); border: 1px solid var(--cream); }
+        .kf-read.on { border-color: var(--vermillion); color: var(--vermillion); }
+        .kf-badges { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.5rem 0; }
+        .kf-badge { font-size: 0.72rem; font-weight: 600; padding: 0.2rem 0.6rem; border-radius: 999px; background: var(--ink); color: var(--paper); }
+        .kf-detail-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+        .kf-examples { margin-top: 1rem; }
+        .kf-ex-title { font-size: 0.8rem; font-weight: 700; color: var(--slate); margin-bottom: 0.4rem; }
+        .kf-ex { display: flex; gap: 0.75rem; align-items: baseline; padding: 0.3rem 0; border-bottom: 1px dashed var(--cream); flex-wrap: wrap; }
+        .kf-ex-word { font-family: 'Noto Sans JP', sans-serif; font-size: 1.05rem; color: var(--ink); }
+        .kf-ex-read { font-size: 0.85rem; color: var(--vermillion); }
+        .kf-ex-gloss { font-size: 0.85rem; color: var(--slate); }
+        @keyframes kfDraw { to { stroke-dashoffset: 0; } }
+        @media (max-width: 640px) {
+            /* canvas bitmap is 280x280 — keep CSS size identical so the
+               engine's stroke coordinates stay 1:1 (no skew on touch) */
+            #kfCanvas { width: 280px; height: 280px; display: block; margin: 0 auto; }
+            .kf-canvas-wrap > div:first-child { width: 100%; }
+            .kf-detail-head { gap: 0.75rem; }
+        }
